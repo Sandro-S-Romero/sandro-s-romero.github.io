@@ -3,61 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto – TecnoSolución</title>
-  <meta name="description" content="Contactanos para diagnóstico gratuito, presupuesto o consultas sobre servicio técnico informático.">
+  <title>Contacto – Sandro Romero</title>
+  <meta name="description" content="Contactá a Sandro Romero, técnico en informática en Corrientes.">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .success-msg {
-      display: none;
-      background: rgba(0,194,255,0.1);
-      border: 1px solid rgba(0,194,255,0.4);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      color: var(--accent);
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
-    .map-placeholder {
-      width: 100%;
-      height: 280px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius)*2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
-    .map-placeholder span { font-size: 3rem; }
-    .social-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: all 0.2s;
-      color: var(--text);
-    }
-    .social-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,194,255,0.05); }
-  </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="logo">Tecno<span>Solución</span></a>
+    <a href="index.html" class="logo">Sandro<span>.</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
       <li><a href="galeria.html">Galería</a></li>
-      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+      <li><a href="quienes-somos.html">Sobre mí</a></li>
       <li><a href="contacto.html" class="active nav-cta">Contacto</a></li>
     </ul>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
@@ -68,14 +26,10 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="page-hero-content">
-      <div class="breadcrumb">
-        <a href="index.html">Inicio</a>
-        <span>›</span>
-        <span>Contacto</span>
-      </div>
+      <div class="breadcrumb"><a href="index.html">Inicio</a><span>›</span><span>Contacto</span></div>
       <div class="section-tag">Hablemos</div>
-      <h1>Contactanos</h1>
-      <p>Diagnóstico gratuito y sin compromiso. Te respondemos en menos de 24 horas.</p>
+      <h1>Contacto</h1>
+      <p>Escribime o llamame. El diagnóstico no tiene costo.</p>
     </div>
   </div>
 
@@ -84,121 +38,81 @@
 
       <!-- INFO -->
       <div>
-        <div class="section-tag">Información de contacto</div>
-        <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 2rem;">Encontranos aquí</h2>
-
+        <div class="section-tag">Datos de contacto</div>
+        <h2 class="section-title" style="font-size: 1.7rem; margin-bottom: 2rem;">Encontranos acá</h2>
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
               <h4>Teléfono / WhatsApp</h4>
               <p><a href="tel:+54XXXXXXXXXX" style="color: var(--accent);">+54 XXX XXX-XXXX</a></p>
-              <p style="font-size: 0.82rem; color: var(--muted);">Lun–Vie 9:00–18:00 · Sáb 9:00–13:00</p>
+              <p style="font-size: 0.8rem;">Lun–Vie 9–18 · Sáb 9–13</p>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon">📧</div>
             <div>
-              <h4>Correo electrónico</h4>
-              <p><a href="mailto:info@tecnosolucion.com" style="color: var(--accent);">info@tecnosolucion.com</a></p>
-              <p style="font-size: 0.82rem; color: var(--muted);">Respondemos en menos de 24 horas</p>
+              <h4>Email</h4>
+              <p><a href="mailto:tu@email.com" style="color: var(--accent);">tu@email.com</a></p>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
-              <h4>Dirección del local</h4>
-              <p>Tu dirección aquí<br>Corrientes Capital, Argentina</p>
-              <p style="font-size: 0.82rem; color: var(--muted);">También hacemos visitas a domicilio</p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">🕐</div>
-            <div>
-              <h4>Horarios de atención</h4>
-              <p>Lunes a Viernes: 9:00 – 18:00</p>
-              <p>Sábados: 9:00 – 13:00</p>
+              <h4>Ubicación</h4>
+              <p>Tu dirección aquí<br>Corrientes Capital</p>
             </div>
           </div>
         </div>
 
-        <!-- REDES SOCIALES -->
-        <div class="social-links">
-          <a href="#" class="social-btn">📘 Facebook</a>
-          <a href="#" class="social-btn">📸 Instagram</a>
-          <a href="https://wa.me/54XXXXXXXXXX" class="social-btn" target="_blank">💬 WhatsApp</a>
+        <div style="display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="https://wa.me/54XXXXXXXXXX" target="_blank" class="btn-primary" style="font-size:0.85rem; padding: 10px 20px;">💬 WhatsApp</a>
+          <a href="#" class="btn-outline" style="font-size:0.85rem; padding: 10px 20px;">📘 Facebook</a>
+          <a href="#" class="btn-outline" style="font-size:0.85rem; padding: 10px 20px;">📸 Instagram</a>
         </div>
 
-        <!-- MAPA PLACEHOLDER -->
-        <div class="map-placeholder">
-          <span>🗺️</span>
-          <p>Acá podés insertar un mapa de Google Maps</p>
-          <p style="font-size: 0.78rem;">Copiá el iframe de Google Maps y reemplazá este bloque</p>
+        <!-- Mapa: reemplazá este bloque con tu iframe de Google Maps -->
+        <div style="margin-top: 2rem; width: 100%; height: 220px; background: var(--bg3); border: 1px solid var(--border); border-radius: calc(var(--radius)*2); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--muted); font-size: 0.85rem;">
+          <span style="font-size: 2.5rem;">🗺️</span>
+          <p>Pegá aquí tu mapa de Google Maps</p>
         </div>
-        <!-- EJEMPLO mapa Google Maps:
-        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="280" style="border:0; border-radius: 12px; margin-top: 2rem;" allowfullscreen loading="lazy"></iframe>
-        -->
       </div>
 
       <!-- FORMULARIO -->
       <div>
         <div class="form-card">
-          <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 1.5rem;">Envianos un mensaje</h3>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" id="nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-              <label for="apellido">Apellido</label>
-              <input type="text" id="apellido" placeholder="Tu apellido">
-            </div>
-          </div>
+          <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem;">Mandame un mensaje</h3>
 
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="tu@email.com" required>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
           </div>
-
           <div class="form-group">
-            <label for="telefono">Teléfono / WhatsApp</label>
-            <input type="tel" id="telefono" placeholder="+54 XXX XXX-XXXX">
+            <label for="contacto">Teléfono o Email</label>
+            <input type="text" id="contacto" placeholder="Para responderte" required>
           </div>
-
           <div class="form-group">
-            <label for="servicio">Servicio que necesitás</label>
+            <label for="servicio">¿Qué necesitás?</label>
             <select id="servicio">
-              <option value="">Seleccioná un servicio...</option>
+              <option value="">Elegí una opción...</option>
               <option>Reparación de PC / Notebook</option>
-              <option>Instalación de Red</option>
-              <option>Seguridad Informática</option>
-              <option>Reparación de Impresora</option>
-              <option>Recuperación de Datos</option>
-              <option>Mantenimiento Preventivo</option>
-              <option>Servicio a Domicilio</option>
-              <option>Otro / Consulta general</option>
+              <option>Redes / Wi-Fi</option>
+              <option>Virus / Seguridad</option>
+              <option>Mantenimiento</option>
+              <option>Otro / Consulta</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label for="mensaje">Describí el problema</label>
-            <textarea id="mensaje" rows="5" placeholder="Contanos qué le pasa a tu equipo o qué necesitás..."></textarea>
+            <label for="mensaje">Contame el problema</label>
+            <textarea id="mensaje" rows="4" placeholder="¿Qué le pasa al equipo?"></textarea>
           </div>
 
-          <button class="btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;" onclick="enviarFormulario()">
-            Enviar mensaje →
+          <button class="btn-primary" style="width:100%; justify-content:center; border:none; cursor:pointer;" onclick="enviar()">
+            Enviar →
           </button>
-
-          <div class="success-msg" id="successMsg">
-            ✅ ¡Mensaje enviado! Te contactamos a la brevedad.
-          </div>
-
+          <div class="success-msg" id="ok">✅ ¡Listo! Te respondo a la brevedad.</div>
           <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1rem; text-align: center;">
-            💡 Para una respuesta más rápida también podés escribirnos por WhatsApp
+            Para una respuesta más rápida escribime directo por WhatsApp.
           </p>
         </div>
       </div>
@@ -209,8 +123,8 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo">Tecno<span>Solución</span></div>
-        <p>Servicio técnico informático profesional para hogares y empresas.</p>
+        <div class="logo">Sandro<span>.</span></div>
+        <p>Técnico en informática en Corrientes. Reparación, redes y mantenimiento.</p>
       </div>
       <div class="footer-col">
         <h5>Páginas</h5>
@@ -218,48 +132,34 @@
           <li><a href="index.html">Inicio</a></li>
           <li><a href="servicios.html">Servicios</a></li>
           <li><a href="galeria.html">Galería</a></li>
-          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+          <li><a href="quienes-somos.html">Sobre mí</a></li>
           <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Servicios</h5>
-        <ul>
-          <li><a href="servicios.html">Reparación de PC</a></li>
-          <li><a href="servicios.html">Redes</a></li>
-          <li><a href="servicios.html">Seguridad</a></li>
-          <li><a href="servicios.html">Impresoras</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Contacto</h5>
         <ul>
           <li><a href="tel:+54XXXXXXXXXX">📞 Tu teléfono</a></li>
-          <li><a href="mailto:info@tucorreo.com">📧 Tu email</a></li>
-          <li><a href="#">📍 Tu dirección</a></li>
+          <li><a href="mailto:tu@email.com">📧 Tu email</a></li>
+          <li><a href="#">📍 Corrientes, Argentina</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 TecnoSolución. Todos los derechos reservados.</span>
-      <span>Diseñado con ♥</span>
+      <span>© 2025 Sandro Romero · Técnico en Informática</span>
+      <span>Corrientes, Argentina</span>
     </div>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-    function enviarFormulario() {
-      const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
-      if (!nombre || !email) {
-        alert('Por favor completá al menos tu nombre y email.');
-        return;
-      }
-      // Aquí podés integrar Formspree, EmailJS u otro servicio
-      // Ejemplo Formspree: fetch('https://formspree.io/f/TU_ID', { method:'POST', ... })
-      document.getElementById('successMsg').style.display = 'block';
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+    function enviar() {
+      const n = document.getElementById('nombre').value;
+      const c = document.getElementById('contacto').value;
+      if (!n || !c) { alert('Completá tu nombre y un dato de contacto.'); return; }
+      document.getElementById('ok').style.display = 'block';
+      // Para enviar el formulario real: integrá Formspree.io (gratis)
+      // fetch('https://formspree.io/f/TU_ID', { method:'POST', body: new FormData(...) })
     }
   </script>
 </body>
