@@ -3,164 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto – Sandro Romero</title>
-  <meta name="description" content="Contactá a Sandro Romero, técnico en informática en Corrientes.">
+  <title>Contacto — Sandro Romero · Técnico en Informática</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .coming-soon { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; }
+    .coming-soon span { font-size: 3rem; margin-bottom: 20px; display: block; }
+    .coming-soon h2 { color: #1B4B82; font-size: 1.5rem; margin-bottom: 10px; }
+    .coming-soon p  { color: #555555; font-size: 0.95rem; }
+    /* Cuando tengas el contenido listo, reemplazá este bloque .coming-soon
+       con tu formulario de contacto, número de teléfono, etc. */
+  </style>
 </head>
 <body>
-
-  <nav class="navbar">
-    <a href="index.html" class="logo">Sandro<span>.</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="quienes-somos.html">Sobre mí</a></li>
-      <li><a href="contacto.html" class="active nav-cta">Contacto</a></li>
-    </ul>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-content">
-      <div class="breadcrumb"><a href="index.html">Inicio</a><span>›</span><span>Contacto</span></div>
-      <div class="section-tag">Hablemos</div>
-      <h1>Contacto</h1>
-      <p>Escribime o llamame. El diagnóstico no tiene costo.</p>
-    </div>
-  </div>
-
-  <section>
-    <div class="contact-grid">
-
-      <!-- INFO -->
-      <div>
-        <div class="section-tag">Datos de contacto</div>
-        <h2 class="section-title" style="font-size: 1.7rem; margin-bottom: 2rem;">Encontranos acá</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div>
-              <h4>Teléfono / WhatsApp</h4>
-              <p><a href="tel:+54XXXXXXXXXX" style="color: var(--accent);">+54 XXX XXX-XXXX</a></p>
-              <p style="font-size: 0.8rem;">Lun–Vie 9–18 · Sáb 9–13</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📧</div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:tu@email.com" style="color: var(--accent);">tu@email.com</a></p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div>
-              <h4>Ubicación</h4>
-              <p>Tu dirección aquí<br>Corrientes Capital</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap;">
-          <a href="https://wa.me/54XXXXXXXXXX" target="_blank" class="btn-primary" style="font-size:0.85rem; padding: 10px 20px;">💬 WhatsApp</a>
-          <a href="#" class="btn-outline" style="font-size:0.85rem; padding: 10px 20px;">📘 Facebook</a>
-          <a href="#" class="btn-outline" style="font-size:0.85rem; padding: 10px 20px;">📸 Instagram</a>
-        </div>
-
-        <!-- Mapa: reemplazá este bloque con tu iframe de Google Maps -->
-        <div style="margin-top: 2rem; width: 100%; height: 220px; background: var(--bg3); border: 1px solid var(--border); border-radius: calc(var(--radius)*2); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--muted); font-size: 0.85rem;">
-          <span style="font-size: 2.5rem;">🗺️</span>
-          <p>Pegá aquí tu mapa de Google Maps</p>
-        </div>
-      </div>
-
-      <!-- FORMULARIO -->
-      <div>
-        <div class="form-card">
-          <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem;">Mandame un mensaje</h3>
-
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Tu nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="contacto">Teléfono o Email</label>
-            <input type="text" id="contacto" placeholder="Para responderte" required>
-          </div>
-          <div class="form-group">
-            <label for="servicio">¿Qué necesitás?</label>
-            <select id="servicio">
-              <option value="">Elegí una opción...</option>
-              <option>Reparación de PC / Notebook</option>
-              <option>Redes / Wi-Fi</option>
-              <option>Virus / Seguridad</option>
-              <option>Mantenimiento</option>
-              <option>Otro / Consulta</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Contame el problema</label>
-            <textarea id="mensaje" rows="4" placeholder="¿Qué le pasa al equipo?"></textarea>
-          </div>
-
-          <button class="btn-primary" style="width:100%; justify-content:center; border:none; cursor:pointer;" onclick="enviar()">
-            Enviar →
-          </button>
-          <div class="success-msg" id="ok">✅ ¡Listo! Te respondo a la brevedad.</div>
-          <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1rem; text-align: center;">
-            Para una respuesta más rápida escribime directo por WhatsApp.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">Sandro<span>.</span></div>
-        <p>Técnico en informática en Corrientes. Reparación, redes y mantenimiento.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Páginas</h5>
-        <ul>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Sandro Romero</a>
+      <nav>
+        <ul id="nav-menu">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="quienes-somos.html">Sobre mí</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="trabajos.html">Trabajos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contacto</h5>
-        <ul>
-          <li><a href="tel:+54XXXXXXXXXX">📞 Tu teléfono</a></li>
-          <li><a href="mailto:tu@email.com">📧 Tu email</a></li>
-          <li><a href="#">📍 Corrientes, Argentina</a></li>
-        </ul>
-      </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Sandro Romero · Técnico en Informática</span>
-      <span>Corrientes, Argentina</span>
-    </div>
-  </footer>
-
+  </header>
+  <div class="coming-soon">
+    <span>📞</span>
+    <h2>Contacto</h2>
+    <p>Próximamente. Por ahora podés escribirme por WhatsApp desde la página de inicio.</p>
+  </div>
+  <footer><p>@2026 Todos los derechos reservados — Sandro S. Romero</p></footer>
   <script>
-    function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
-    function enviar() {
-      const n = document.getElementById('nombre').value;
-      const c = document.getElementById('contacto').value;
-      if (!n || !c) { alert('Completá tu nombre y un dato de contacto.'); return; }
-      document.getElementById('ok').style.display = 'block';
-      // Para enviar el formulario real: integrá Formspree.io (gratis)
-      // fetch('https://formspree.io/f/TU_ID', { method:'POST', body: new FormData(...) })
-    }
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('open');
+    });
   </script>
 </body>
 </html>
