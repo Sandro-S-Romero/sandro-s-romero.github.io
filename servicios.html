@@ -1,31 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- ============================================================
+       HEAD — Configuración de la página Servicios
+       ============================================================ -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título de la pestaña del navegador -->
   <title>Servicios — Sandro Romero · Técnico en Informática</title>
+
+  <!-- Descripción para buscadores -->
+  <meta name="description" content="Servicios de técnico informático en Corrientes: instalación de Windows, reparación de PC y notebooks, virus, redes, backups y más.">
+
+  <!-- Hoja de estilos compartida con todas las páginas -->
   <link rel="stylesheet" href="css/styles.css">
+
   <style>
-    /* Sección vacía — reemplazá este bloque cuando tengas el contenido listo */
-    .coming-soon {
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    /* ============================================================
+       ESTILOS EXCLUSIVOS DE servicios.html
+       ============================================================
+       Todo lo que está aquí afecta SOLO a esta página.
+       Los estilos globales (colores, fuentes, header, footer)
+       siguen estando en css/styles.css
+       ============================================================ */
+
+    /* --- HERO DE PÁGINA INTERNA ---
+       Es más compacto que el hero del index.
+       Cambiá el padding si querés más o menos espacio arriba/abajo. */
+    .page-hero {
+      padding: 52px 20px 44px;
       text-align: center;
-      padding: 60px 20px;
+      background-color: #F5F0E8;
+      border-bottom: 1px solid #D6CFC3;
     }
-    .coming-soon span { font-size: 3rem; margin-bottom: 20px; display: block; }
-    .coming-soon h2 { color: #1B4B82; font-size: 1.5rem; margin-bottom: 10px; }
-    .coming-soon p  { color: #555555; font-size: 0.95rem; }
+
+    /* Migas de pan: "Inicio > Servicios" */
+    .breadcrumb {
+      font-size: 0.82rem;
+      color: #999;
+      margin-bottom: 14px;
+    }
+
+    .breadcrumb a {
+      color: #1B4B82;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Título principal de la página */
+    .page-hero h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #1B4B82;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    /* Subtítulo del hero */
+    .page-hero p {
+      font-size: 1rem;
+      color: #555555;
+      max-width: 520px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ============================================================
+       GRILLA DE TARJETAS DE SERVICIOS (vista general)
+       ============================================================
+       Esta sección muestra todos los servicios en tarjetas.
+       Para cambiar cuántas columnas hay, modificá el valor
+       de minmax() en grid-template-columns.
+       Ejemplo: minmax(200px, 1fr) = columnas más angostas.
+       ============================================================ */
+    .servicios-overview {
+      padding: 60px 20px;
+      background-color: #EEEBE3;
+    }
+
+    .servicios-overview-grid {
+      display: grid;
+      /* auto-fill crea tantas columnas como entren en el ancho disponible */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    /* Tarjeta de servicio — vista rápida */
+    .srv-card {
+      background: #F5F0E8;
+      border: 1px solid #D6CFC3;
+      border-radius: 8px;
+      padding: 22px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .srv-card:hover {
+      box-shadow: 0 4px 16px rgba(27, 75, 130, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Ícono de la tarjeta */
+    .srv-card-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0; /* No se achica al reducir el contenedor */
+      margin-top: 2px;
+    }
+
+    /* Texto derecho de la tarjeta */
+    .srv-card-text h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #1B4B82;
+      margin-bottom: 4px;
+    }
+
+    .srv-card-text p {
+      font-size: 0.85rem;
+      color: #555555;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SECCIÓN DE DETALLE DE CADA SERVICIO
+       ============================================================
+       Cada servicio tiene su propio bloque con:
+       - Ícono grande
+       - Título
+       - Descripción larga
+       - Lista de detalles (¿qué incluye?)
+       - Tip o consejo educativo
+
+       Los bloques alternan fondo claro y oscuro para separar visualmente.
+       Fondo claro: #F5F0E8 (beige principal)
+       Fondo oscuro: #EEEBE3 (beige alternado)
+       ============================================================ */
+
+    /* Bloque de detalle de un servicio */
+    .srv-detail {
+      padding: 64px 20px;
+    }
+
+    /* Fondo alternado para separar servicios */
+    .srv-detail:nth-child(even) {
+      background-color: #EEEBE3;
+    }
+
+    .srv-detail:nth-child(odd) {
+      background-color: #F5F0E8;
+    }
+
+    /* Contenido interno del detalle */
+    .srv-detail-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      /* En escritorio: ícono a la izquierda, texto a la derecha */
+      grid-template-columns: 90px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* Columna del ícono grande */
+    .srv-detail-icon {
+      font-size: 3.2rem;
+      text-align: center;
+      padding-top: 6px;
+    }
+
+    /* Etiqueta de categoría (tipo "Sistema Operativo") */
+    .srv-category {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1B4B82;
+      background: rgba(27, 75, 130, 0.08);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Título del servicio en el bloque de detalle */
+    .srv-detail h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1B4B82;
+      margin-bottom: 10px;
+    }
+
+    /* Descripción del servicio */
+    .srv-detail p {
+      font-size: 0.92rem;
+      color: #444444;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    /* Lista de ítems incluidos en el servicio */
+    .srv-includes {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    .srv-includes li {
+      font-size: 0.88rem;
+      color: #333333;
+      padding: 5px 0;
+      border-bottom: 1px solid #D6CFC3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .srv-includes li:last-child {
+      border-bottom: none;
+    }
+
+    /* Tilde verde antes de cada ítem */
+    .srv-includes li::before {
+      content: '✔';
+      color: #1B4B82;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* Caja de tip/consejo educativo */
+    .srv-tip {
+      background: rgba(27, 75, 130, 0.06);
+      border-left: 3px solid #1B4B82;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* Ícono de bombilla antes del tip */
+    .srv-tip::before {
+      content: '💡 ';
+    }
+
+    /* ============================================================
+       SECCIÓN CTA FINAL (botón WhatsApp al final de la página)
+       ============================================================
+       Igual al de index.html — reutiliza los mismos estilos CSS
+       de .whatsapp-section y .btn-whatsapp del styles.css
+       ============================================================ */
+
+    /* ============================================================
+       RESPONSIVE — Adaptación a móviles
+       ============================================================ */
+    @media (max-width: 640px) {
+
+      /* En celular el detalle pasa a una sola columna */
+      .srv-detail-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* El ícono se centra en móvil */
+      .srv-detail-icon {
+        text-align: left;
+        font-size: 2.5rem;
+      }
+
+      .page-hero h1 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
+
 </head>
 <body>
 
+  <!-- ============================================================
+       HEADER — Igual en todas las páginas
+       ============================================================
+       Copiado del index.html. Si cambiás algo acá, recordá
+       actualizarlo también en las otras páginas.
+       ============================================================ -->
   <header>
     <div class="header-inner">
+
+      <!-- Logo / nombre -->
       <a href="index.html" class="logo">Sandro Romero</a>
+
+      <!-- Menú de navegación -->
+      <!-- "active" está en "Servicios" porque es la página actual -->
       <nav>
         <ul id="nav-menu">
           <li><a href="index.html">Inicio</a></li>
@@ -35,26 +308,572 @@
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
+
+      <!-- Botón hamburguesa para móviles -->
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
     </div>
   </header>
 
-  <div class="coming-soon">
-    <span>⚙️</span>
-    <h2>Servicios</h2>
-    <p>Sección en construcción. Próximamente estará disponible.</p>
+
+  <!-- ============================================================
+       HERO DE LA PÁGINA
+       ============================================================
+       Cabecera con el título y subtítulo de la sección.
+       Más compacto que el hero del index.
+       ============================================================ -->
+  <div class="page-hero">
+
+    <!-- Migas de pan: mostramos dónde está el usuario -->
+    <!-- Cambiá o borrá esto si no querés mostrar la navegación contextual -->
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> &rsaquo; Servicios
+    </div>
+
+    <h1>Servicios</h1>
+    <p>Todo lo que necesitás para que tu equipo funcione bien. Diagnóstico siempre sin costo.</p>
+
   </div>
 
+
+  <!-- ============================================================
+       RESUMEN DE SERVICIOS — Vista rápida en tarjetas
+       ============================================================
+       Esta grilla muestra todos los servicios de un vistazo.
+       Para agregar uno nuevo: copiá un .srv-card y editá el
+       ícono, el h3 y el p.
+       ============================================================ -->
+  <section class="servicios-overview">
+
+    <h2 class="section-title">¿Qué hago?</h2>
+    <div class="section-divider"></div>
+
+    <div class="servicios-overview-grid">
+
+      <!-- TARJETA 1 -->
+      <!-- El href del <a> apunta a la sección de detalle más abajo -->
+      <a href="#windows" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🪟</span>
+        <div class="srv-card-text">
+          <h3>Instalación de Windows</h3>
+          <p>Sistema operativo limpio, drivers y equipo listo para usar.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 2 -->
+      <a href="#office" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">📄</span>
+        <div class="srv-card-text">
+          <h3>Paquete Office</h3>
+          <p>Microsoft Office o LibreOffice configurado para trabajo y estudio.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 3 -->
+      <a href="#programas" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">📦</span>
+        <div class="srv-card-text">
+          <h3>Programas esenciales</h3>
+          <p>Navegador, PDF, compresor, multimedia y más, todo listo.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 4 -->
+      <a href="#optimizacion" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">⚡</span>
+        <div class="srv-card-text">
+          <h3>Configuración y optimización</h3>
+          <p>Tu equipo arranca más rápido y funciona de forma eficiente.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 5 -->
+      <a href="#virus" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🛡️</span>
+        <div class="srv-card-text">
+          <h3>Eliminación de virus</h3>
+          <p>Limpieza de virus, malware y antivirus confiable instalado.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 6 -->
+      <a href="#backup" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">💾</span>
+        <div class="srv-card-text">
+          <h3>Backups de archivos</h3>
+          <p>Copia de tus datos antes de cualquier intervención.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 7 -->
+      <a href="#ssd" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🔄</span>
+        <div class="srv-card-text">
+          <h3>Clonado y cambio HDD→SSD</h3>
+          <p>Migramos tu sistema al SSD sin perder ningún dato.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 8 -->
+      <a href="#netbook" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🎓</span>
+        <div class="srv-card-text">
+          <h3>Desbloqueo de netbook del gobierno</h3>
+          <p>Desbloqueamos las netbooks del programa gubernamental.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 9 -->
+      <a href="#limpieza" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🧹</span>
+        <div class="srv-card-text">
+          <h3>Limpieza y mantenimiento</h3>
+          <p>Limpieza interna, pasta térmica y revisión general.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 10 -->
+      <a href="#bisagras" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🔩</span>
+        <div class="srv-card-text">
+          <h3>Reparación de bisagras</h3>
+          <p>Carcasa y soportes de la pantalla de tu notebook.</p>
+        </div>
+      </a>
+
+      <!-- TARJETA 11 -->
+      <a href="#reparaciones" class="srv-card" style="text-decoration:none; color:inherit;">
+        <span class="srv-card-icon">🔧</span>
+        <div class="srv-card-text">
+          <h3>Reparaciones en general</h3>
+          <p>Teclados, pantallas, puertos, fuentes y más.</p>
+        </div>
+      </a>
+
+    </div><!-- fin .servicios-overview-grid -->
+  </section>
+
+
+  <!-- ============================================================
+       DETALLE DE CADA SERVICIO
+       ============================================================
+       Cada bloque .srv-detail tiene un id que coincide con los
+       href de las tarjetas de arriba. Así al hacer clic en una
+       tarjeta se scrollea hasta el detalle correspondiente.
+
+       Estructura de cada bloque:
+       ┌─────────────────────────────────────────┐
+       │  [ícono]   Categoría                    │
+       │            Título del servicio          │
+       │            Descripción completa         │
+       │            ✔ Ítem incluido              │
+       │            ✔ Ítem incluido              │
+       │            💡 Tip educativo             │
+       └─────────────────────────────────────────┘
+
+       Para modificar un servicio, buscá su id (ej: id="windows")
+       y editá el texto dentro de ese bloque.
+       ============================================================ -->
+
+
+  <!-- ── SERVICIO 1: Windows ── -->
+  <!-- id="windows" es el ancla a la que apunta la tarjeta de arriba -->
+  <section class="srv-detail" id="windows">
+    <div class="srv-detail-inner">
+
+      <!-- Columna izquierda: ícono -->
+      <!-- Cambiá el emoji para cambiar el ícono -->
+      <div class="srv-detail-icon">🪟</div>
+
+      <!-- Columna derecha: contenido -->
+      <div>
+        <!-- Etiqueta de categoría -->
+        <span class="srv-category">Sistema Operativo</span>
+
+        <h2>Instalación de Windows</h2>
+
+        <p>
+          Realizamos una instalación limpia y actualizada de Windows 10 u 11, con todos
+          los controladores (drivers) del equipo instalados y verificados. El resultado
+          es un sistema operativo sin programas basura, libre de virus y listo para usar
+          desde el primer encendido.
+        </p>
+
+        <!-- Lista de lo que incluye el servicio -->
+        <!-- Para agregar un ítem, copiá un <li> y cambiá el texto -->
+        <ul class="srv-includes">
+          <li>Instalación limpia de Windows 10 u 11</li>
+          <li>Instalación de todos los drivers del equipo</li>
+          <li>Activación del sistema operativo</li>
+          <li>Configuración inicial de usuario y preferencias</li>
+          <li>Backup de tus archivos antes de formatear</li>
+        </ul>
+
+        <!-- Tip educativo -->
+        <!-- Cambiá el texto para dar otro consejo -->
+        <div class="srv-tip">
+          Se recomienda reinstalar Windows cada 2 o 3 años, o cuando el equipo empieza a
+          ir muy lento o muestra errores frecuentes. Una instalación limpia devuelve el
+          rendimiento original sin necesidad de comprar hardware nuevo.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 2: Office ── -->
+  <section class="srv-detail" id="office">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">📄</div>
+      <div>
+        <span class="srv-category">Productividad</span>
+        <h2>Paquete Office</h2>
+        <p>
+          Instalamos y configuramos Microsoft Office (Word, Excel, PowerPoint, Outlook)
+          o LibreOffice, la alternativa gratuita y compatible con todos los formatos de
+          Office. Te asesoramos sobre cuál conviene según tu uso y presupuesto.
+        </p>
+        <ul class="srv-includes">
+          <li>Instalación de Microsoft Office o LibreOffice</li>
+          <li>Configuración de cuenta y correo si lo necesitás</li>
+          <li>Verificación de compatibilidad con tus archivos</li>
+          <li>Explicación básica de uso si la necesitás</li>
+        </ul>
+        <div class="srv-tip">
+          LibreOffice es completamente gratis y abre archivos .docx, .xlsx y .pptx sin
+          problemas. Es ideal para uso doméstico o escolar. Si trabajás en entorno
+          empresarial donde se comparten archivos constantemente, Office puede ser la
+          mejor opción.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 3: Programas esenciales ── -->
+  <section class="srv-detail" id="programas">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">📦</div>
+      <div>
+        <span class="srv-category">Software</span>
+        <h2>Programas esenciales</h2>
+        <p>
+          Después de instalar Windows, un equipo necesita un conjunto de programas básicos
+          para funcionar bien en el día a día. Instalamos todo lo necesario para que puedas
+          navegar, trabajar y entretenerte desde el primer momento.
+        </p>
+        <ul class="srv-includes">
+          <li>Navegador web (Brave, Chrome o Edge)</li>
+          <li>Lector de PDF (Adobe Acrobat Reader)</li>
+          <li>Compresor de archivos (WinRAR o 7-Zip)</li>
+          <li>Reproductor multimedia (VLC)</li>
+          <li>Herramienta de imágenes básica</li>
+          <li>Cualquier programa específico que necesités</li>
+        </ul>
+        <div class="srv-tip">
+          Siempre descargá los programas desde sus sitios oficiales. Muchos sitios de
+          descarga no oficial incluyen adware o malware que ralentizan el equipo y
+          muestran publicidades no deseadas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 4: Optimización ── -->
+  <section class="srv-detail" id="optimizacion">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">⚡</div>
+      <div>
+        <span class="srv-category">Rendimiento</span>
+        <h2>Configuración y optimización del sistema</h2>
+        <p>
+          Con el tiempo, Windows acumula programas que arrancan solos, archivos temporales
+          y configuraciones que frenan el equipo. Realizamos una optimización completa para
+          que tu PC responda más rápido sin necesidad de comprar componentes nuevos.
+        </p>
+        <ul class="srv-includes">
+          <li>Desactivación de programas al inicio innecesarios</li>
+          <li>Limpieza de archivos temporales y caché del sistema</li>
+          <li>Configuración del plan de energía para mejor rendimiento</li>
+          <li>Actualización de Windows y drivers</li>
+          <li>Desinstalación de programas innecesarios o basura</li>
+        </ul>
+        <div class="srv-tip">
+          Si tu PC tarda más de 2 minutos en arrancar o se cuelga seguido, probablemente
+          tenga programas de inicio innecesarios o disco casi lleno. En muchos casos se
+          resuelve con optimización, sin necesidad de formatear.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 5: Eliminación de virus ── -->
+  <section class="srv-detail" id="virus">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">🛡️</div>
+      <div>
+        <span class="srv-category">Seguridad</span>
+        <h2>Eliminación de virus y malware</h2>
+        <p>
+          Detectamos y eliminamos virus, malware, ransomware, adware y cualquier software
+          malicioso que esté afectando tu equipo. Luego instalamos y configuramos una
+          solución de antivirus confiable para protegerte de futuros ataques.
+        </p>
+        <ul class="srv-includes">
+          <li>Escaneo completo con herramientas especializadas</li>
+          <li>Eliminación de virus, malware y adware</li>
+          <li>Limpieza de extensiones maliciosas del navegador</li>
+          <li>Instalación y configuración de antivirus</li>
+          <li>Verificación de que el sistema quedó limpio</li>
+        </ul>
+        <div class="srv-tip">
+          Las señales más comunes de infección son: PC muy lenta de repente, publicidades
+          que aparecen solas, el navegador redirige a sitios desconocidos, o programas que
+          se abren sin que los hayas abierto. Si notás alguna de estas señales, traé el
+          equipo antes de que el daño sea mayor.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 6: Backups ── -->
+  <section class="srv-detail" id="backup">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">💾</div>
+      <div>
+        <span class="srv-category">Protección de datos</span>
+        <h2>Backups de archivos</h2>
+        <p>
+          Antes de cualquier reparación importante, realizamos una copia de seguridad. 
+          <br><strong>Toda la información que contenga tu equipo (documentos, fotos, videos, cuentas... etc.) son tratados con la mas estricta confidencialidad y discreción, entendiendo la importancia de privacidad y seguridad de tus datos.</strong>
+        </p>
+        <ul class="srv-includes">
+          <li>Copia de documentos, fotos, música y videos</li>
+          <li>Backup a disco externo o pendrive</li>
+          <li>Verificación de integridad de los archivos copiados</li>
+        </ul>
+        <div class="srv-tip">
+          La regla básica de backup es la 3-2-1: tené 3 copias de tus datos, en 2
+          soportes diferentes, y 1 fuera de tu casa (nube o pendrive en otro lugar).
+          Perder fotos familiares o años de trabajo por no tener un respaldo es
+          más común de lo que pensás.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 7: Clonado / SSD ── -->
+  <section class="srv-detail" id="ssd">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">🔄</div>
+      <div>
+        <span class="srv-category">Hardware</span>
+        <h2>Clonado de sistema y cambio HDD→SSD</h2>
+        <p>
+          Reemplazamos el disco rígido tradicional (HDD) por un SSD, que es entre 5 y 10
+          veces más rápido. Clonamos todo tu sistema tal cual está sin perder ningún
+          archivo, programa ni configuración y lo pasamos al SSD nuevo.
+        </p>
+        <ul class="srv-includes">
+          <li>Clonado completo del sistema al nuevo SSD</li>
+          <li>No se pierden programas, archivos ni contraseñas</li>
+          <li>Instalación física del SSD en el equipo</li>
+          <li>Verificación del arranque correcto</li>
+          <li>El HDD original queda como backup o disco secundario (si querés)</li>
+        </ul>
+        <div class="srv-tip">
+          Cambiar de HDD a SSD es la mejora que más se nota en una notebook vieja. El
+          sistema arranca en segundos, los programas abren al instante y la batería dura
+          más. Es mucho más económico que comprar un equipo nuevo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 8: Netbook del gobierno ── -->
+  <section class="srv-detail" id="netbook">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">🎓</div>
+      <div>
+        <span class="srv-category">Educación</span>
+        <h2>Desbloqueo de netbook del gobierno</h2>
+        <p>
+          Las netbooks entregadas por programas gubernamentales (como Conectar Igualdad
+          o Juana Manso) vienen con restricciones de software que limitan su uso. Realizamos
+          el proceso de desbloqueo para que puedas usarla libremente.
+        </p>
+        <ul class="srv-includes">
+          <li>Desbloqueo definitivo</li>
+          <li>Cambio de pila de la placa CR2032</li>
+          <li>Cambio de pasta térmica</li>
+        </ul>
+        <div class="srv-tip">
+          Si la netbook ya no recibe soporte oficial o está fuera del programa escolar,
+          el desbloqueo te permite darle una segunda vida para uso personal, de trabajo
+          o de estudio sin restricciones.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 9: Limpieza y mantenimiento ── -->
+  <section class="srv-detail" id="limpieza">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">🧹</div>
+      <div>
+        <span class="srv-category">Mantenimiento</span>
+        <h2>Limpieza y mantenimiento de hardware</h2>
+        <p>
+          El polvo acumulado dentro de la computadora es una de las principales causas de
+          sobrecalentamiento, cuelgues y fallas. Realizamos una limpieza interna completa
+          y aplicamos pasta térmica nueva para mantener las temperaturas bajo control.
+        </p>
+        <ul class="srv-includes">
+          <li>Desmontaje y limpieza interna con aire comprimido</li>
+          <li>Cambio de pasta térmica en procesador y GPU</li>
+          <li>Limpieza de ventiladores y disipadores</li>
+          <li>Verificación del estado general del hardware</li>
+          <li>Revisión de contactos y componentes</li>
+          <li>Cambio de pila de la placa madre (CR2032) </li>
+          <li>Presintado y ordenamiento de cables en PC</li>
+          <li>Limpieza interna y verificación de fuente de alimientación de PC</li>
+        </ul>
+        <div class="srv-tip">
+          En Corrientes, por el calor y el polvo, recomendamos hacer mantenimiento
+          preventivo al menos una vez al año. Un equipo limpio puede durar el doble
+          que uno al que nunca se le hace mantenimiento.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 10: Bisagras ── -->
+  <section class="srv-detail" id="bisagras">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">🔩</div>
+      <div>
+        <span class="srv-category">Reparación</span>
+        <h2>Reparación de bisagras</h2>
+        <p>
+          Las bisagras de las notebooks son uno de los puntos de mayor desgaste con el
+          uso diario. Reparamos la carcasa plástica y los soportes metálicos de la bisagra
+          para que la pantalla vuelva a sostenerse correctamente.
+        </p>
+        <ul class="srv-includes">
+          <li>Diagnóstico del tipo de rotura</li>
+          <li>Reparación o reemplazo de bisagras según el modelo</li>
+          <li>Reparación de la carcasa plástica del marco</li>
+          <li>Verificación del cable de pantalla (no quede dañado)</li>
+        </ul>
+        <div class="srv-tip">
+          No ignorés una bisagra rota aunque la pantalla "todavía funcione". Con el tiempo,
+          el movimiento daña el cable de video que pasa por la bisagra, y cambiar ese cable
+          o la pantalla entera es mucho más caro que reparar la bisagra a tiempo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICIO 11: Reparaciones generales ── -->
+  <section class="srv-detail" id="reparaciones">
+    <div class="srv-detail-inner">
+      <div class="srv-detail-icon">🔧</div>
+      <div>
+        <span class="srv-category">Reparación</span>
+        <h2>Reparaciones en general</h2>
+        <p>
+          Además de los servicios específicos, realizamos todo tipo de reparaciones de
+          hardware en PC de escritorio, notebooks, netbook, All In One, y mini PC: teclados, pantallas, conectores,
+          puertos USB, fuentes de alimentación y más.
+        </p>
+        <ul class="srv-includes">
+          <li>Cambio de teclado de notebook</li>
+          <li>Cambio de pantalla rota o con fallas</li>
+          <li>Reparación o cambio de puertos USB</li>
+          <li>Cambio de fuente de alimentación en PC de escritorio</li>
+          <li>Cambio de RAM y diagnóstico de memoria</li>
+          <li>Otros componentes según disponibilidad</li>
+        </ul>
+        <div class="srv-tip">
+          Antes de comprar un equipo nuevo por una falla de hardware, consultame.
+          Muchas reparaciones son más económicas de lo que parecen y pueden alargar
+          la vida del equipo varios años más.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA FINAL — BOTÓN WHATSAPP
+       ============================================================
+       El mismo botón que está en el index.html.
+       Reutiliza las clases .whatsapp-section y .btn-whatsapp
+       que ya están definidas en styles.css.
+       ============================================================ -->
+  <section class="whatsapp-section">
+    <p>¿Necesitás alguno de estos servicios? Escribime y acordamos.</p>
+
+    <!-- IMPORTANTE: el número ya está cargado con tu WhatsApp real -->
+    <!-- Si cambia tu número, actualizalo también en index.html -->
+    <a
+      href="https://wa.me/5493794671403?text=Hola%20Sandro%2C%20necesito%20ayuda%20con%20mi%20equipo"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-whatsapp"
+    >
+      <!-- Ícono SVG de WhatsApp — no hace falta tocarlo -->
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.738 5.47 2.027 7.773L0 32l8.468-2.002A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.77-1.853l-.484-.287-5.025 1.187 1.236-4.895-.316-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.946c-.399-.2-2.36-1.164-2.726-1.296-.366-.133-.633-.2-.9.2-.266.399-1.031 1.296-1.265 1.562-.233.266-.466.3-.865.1-.4-.2-1.688-.622-3.215-1.984-1.188-1.06-1.99-2.37-2.223-2.77-.233-.4-.025-.615.175-.814.18-.18.4-.466.6-.7.2-.233.266-.4.4-.666.133-.266.066-.5-.033-.7-.1-.2-.9-2.164-1.232-2.964-.325-.78-.656-.674-.9-.687-.233-.012-.5-.015-.766-.015s-.7.1-.9.5c-.266.466-.933 1.265-1.03 3.031-.003.05-.003.104-.003.155 0 1.74.618 3.33 1.728 4.634.2.233 2.726 4.164 6.605 5.677 3.879 1.513 3.879 1.008 4.578.945.7-.066 2.26-.925 2.58-1.816.32-.89.32-1.654.225-1.814-.093-.16-.36-.26-.76-.46z"/>
+      </svg>
+      Escribime
+    </a>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
   <footer>
-    <p>@2026 Todos los derechos reservados — Sandro S. Romero</p>
+    <p>@2026 Todos los derechos reservados <br>Sandro S. Romero</p>
   </footer>
 
+
+  <!-- ============================================================
+       JAVASCRIPT — Solo el menú hamburguesa
+       ============================================================
+       Esta página no tiene carrusel, así que solo necesitamos
+       el script del menú móvil.
+       ============================================================ -->
   <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('nav-menu').classList.toggle('open');
+    /* ---- MENÚ HAMBURGUESA ---- */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Cierra el menú al tocar un link (buena experiencia en móvil)
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
     });
   </script>
+
 </body>
 </html>
