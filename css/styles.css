@@ -360,49 +360,47 @@ nav ul li a.active {
   border-radius: 2px;
 }
 
-/* --- GRILLA DE SERVICIOS --- */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* --- LISTA DE SERVICIOS (vista simple en index.html) --- */
+/* Reemplaza la grilla de tarjetas por una lista limpia centrada */
+.services-list {
+  list-style: none;           /* Sin viñetas por defecto */
+  max-width: 480px;           /* Ancho máximo de la lista. Cambiá si querés más ancha */
+  margin: 0 auto;             /* Centrada en la página */
+  padding: 0;
 }
 
-/* --- TARJETA DE SERVICIO --- */
-.service-card {
-  background: #F5F0E8;
-  border: 1px solid #D6CFC3;
-  border-radius: 8px;
-  padding: 24px 20px;
-  transition: box-shadow 0.2s, transform 0.2s;
+.services-list li {
+  padding: 11px 0;                        /* Espacio arriba y abajo de cada ítem */
+  border-bottom: 1px solid #D6CFC3;       /* Línea separadora entre ítems */
+  font-size: 0.97rem;
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.service-card:hover {
-  box-shadow: 0 4px 16px rgba(27, 75, 130, 0.1); /* Sombra azulada suave */
-  transform: translateY(-2px); /* Sube levemente al hacer hover */
-}
-
-/* --- ÍCONO DE LA TARJETA --- */
-.service-icon {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  display: block;
-}
-
-/* --- NOMBRE DEL SERVICIO --- */
-.service-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
+/* Tilde azul antes de cada ítem */
+.services-list li::before {
+  content: '✔';
   color: #1B4B82;
-  margin-bottom: 6px;
+  font-size: 0.78rem;
+  flex-shrink: 0;
 }
 
-/* --- DESCRIPCIÓN CORTA DEL SERVICIO --- */
-.service-card p {
-  font-size: 0.875rem;
-  color: #555555;
-  line-height: 1.6;
+.services-list li:last-child {
+  border-bottom: none;        /* El último ítem no tiene línea abajo */
+}
+
+/* --- ENLACE EN EL TÍTULO DE SERVICIOS --- */
+/* El título "Servicios" se vuelve clickeable */
+.section-title a {
+  color: #1B4B82;             /* Mismo azul que el título normal */
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.section-title a:hover {
+  opacity: 0.75;              /* Se aclara un poco al pasar el mouse */
 }
 
 
