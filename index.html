@@ -15,7 +15,7 @@
   <title>Sandro Romero — Servicio Técnico de Computadoras · Corrientes</title>
 
   <!-- Descripción para buscadores como Google -->
-  <meta name="description" content="Servicio técnico de computadoras en Corrientes. Reparación y mantenimiento de PC y Notebook. Más de 10 años de experiencia.">
+  <meta name="description" content="Servicio técnico de computadoras en Corrientes. Reparación y mantenimiento de PC y Notebook">
 
   <!-- Enlace al archivo de estilos CSS -->
   <!-- Si movés el archivo styles.css a otra carpeta, actualizá esta ruta -->
@@ -149,12 +149,7 @@
 
       </div><!-- fin .carousel-track -->
 
-      <!-- BOTÓN ANTERIOR -->
-      <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">&#8592;</button>
-
-      <!-- BOTÓN SIGUIENTE -->
-      <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">&#8594;</button>
-
+     
     </div><!-- fin .carousel-wrapper -->
 
     <!-- PUNTOS INDICADORES -->
@@ -450,7 +445,7 @@
        ============================================================ -->
 
   <footer>
-    <p>@2026 Todos los derechos reservados <br>Sandro S. Romero</p>
+    <p>@2026 Sandro S. Romero <br>Todos los derechos reservados</p>
   </footer>
 
 
@@ -491,37 +486,35 @@
 
     /* ---- CARRUSEL ---- */
 
-    const track     = document.getElementById('carouselTrack');
-    const slides    = track.querySelectorAll('.carousel-slide');
-    const dotsWrap  = document.getElementById('carouselDots');
-    const prevBtn   = document.getElementById('prevBtn');
-    const nextBtn   = document.getElementById('nextBtn');
+const track    = document.getElementById('carouselTrack');
+const slides   = track.querySelectorAll('.carousel-slide');
+const dotsWrap = document.getElementById('carouselDots');
 
-    let current = 0; // Slide actual (empieza en 0 = el primero)
+let current = 0;
 
-    // Crear puntos indicadores dinámicamente (uno por cada slide)
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.classList.add('dot');
-      dot.setAttribute('aria-label', 'Ir al slide ' + (i + 1));
-      if (i === 0) dot.classList.add('active'); // El primero empieza activo
-      dot.addEventListener('click', () => goTo(i)); // Al hacer clic va a ese slide
-      dotsWrap.appendChild(dot);
-    });
+// Crear puntos indicadores
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.classList.add('dot');
+  dot.setAttribute('aria-label', 'Ir al slide ' + (i + 1));
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goTo(i));
+  dotsWrap.appendChild(dot);
+});
 
-    // Función para ir a un slide específico
-    function goTo(index) {
-      // Limita el índice entre 0 y el último slide
-      current = (index + slides.length) % slides.length;
+// Función para ir a un slide
+function goTo(index) {
+  current = (index + slides.length) % slides.length;
+  track.style.transform = 'translateX(-' + (current * 100) + '%)';
+  dotsWrap.querySelectorAll('.dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === current);
+  });
+}
 
-      // Mueve la pista del carrusel con CSS transform
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
-
-      // Actualiza el punto activo
-      dotsWrap.querySelectorAll('.dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === current);
-      });
-    }
+// Avance automático cada 1 segundo
+// Para cambiar la velocidad, modificá el número 1000 (milisegundos)
+// 1000 = 1 segundo | 2000 = 2 segundos | 3000 = 3 segundos
+setInterval(() => goTo(current + 1), 1500);
 
     // Botón anterior
     prevBtn.addEventListener('click', () => goTo(current - 1));
