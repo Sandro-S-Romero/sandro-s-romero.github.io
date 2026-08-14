@@ -170,6 +170,26 @@ nav ul li a.active {
   margin: 0 auto;
 }
 
+/* --- PÁRRAFO DE PRESENTACIÓN DEBAJO DEL SUBTÍTULO --- */
+/* Usado en el hero: reparación, mantenimiento y optimización... */
+.hero p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #555555;
+}
+
+/* --- ETIQUETA DE UBICACIÓN (Corrientes, Argentina) --- */
+/* Reemplaza al antiguo "Ciudad de Corrientes" del título principal */
+.location-tag {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2E6DB4; /* Azul claro, más discreto que el azul principal */
+  margin-top: 14px;
+  letter-spacing: 0.3px;
+}
+
 
 /* ============================================================
    CARRUSEL DE FOTOS
@@ -257,12 +277,37 @@ nav ul li a.active {
 
 
 /* ============================================================
+   SECCIÓN "SOBRE MÍ"
+   ============================================================ */
+
+.about-section {
+  padding: 64px 20px;
+  background-color: #F5F0E8;
+  text-align: center;
+}
+
+/* --- PÁRRAFOS DE PRESENTACIÓN --- */
+/* Ancho limitado para que se lea cómodo, igual criterio que .hero h2 */
+.about-section p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.8;
+}
+
+.about-section p + p {
+  margin-top: 16px; /* Separación entre párrafos */
+}
+
+
+/* ============================================================
    SECCIÓN ESTADÍSTICAS / ÍCONOS
    ============================================================ */
 
 .stats-section {
   padding: 52px 20px;
-  background-color: #F5F0E8;
+  background-color: #EEEBE3;
 }
 
 /* --- GRILLA DE 3 COLUMNAS --- */
@@ -301,7 +346,55 @@ nav ul li a.active {
 
 
 /* ============================================================
-   SECCIÓN SERVICIOS
+   SECCIÓN FORMACIÓN
+   ============================================================ */
+
+.formacion-section {
+  padding: 64px 20px;
+  background-color: #F5F0E8;
+}
+
+/* --- GRILLA DE TARJETAS DE FORMACIÓN --- */
+/* auto-fit + minmax: se acomoda solo según el ancho de pantalla */
+.formacion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- CADA TARJETA DE FORMACIÓN --- */
+/* Mismo lenguaje visual que .blog-card: fondo beige oscuro + borde */
+.formacion-item {
+  background: #EEEBE3;
+  border: 1px solid #D6CFC3;
+  border-radius: 8px;
+  padding: 22px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.formacion-item:hover {
+  box-shadow: 0 4px 20px rgba(27, 75, 130, 0.1);
+  transform: translateY(-3px);
+}
+
+.formacion-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1B4B82;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.formacion-item p {
+  font-size: 0.875rem;
+  color: #555555;
+}
+
+
+/* ============================================================
+   SECCIÓN SERVICIOS / ÁREAS DE TRABAJO
    ============================================================ */
 
 .services-section {
@@ -336,11 +429,11 @@ nav ul li a.active {
   border-radius: 2px;
 }
 
-/* --- LISTA DE SERVICIOS (vista simple en index.html) --- */
+/* --- LISTA DE SERVICIOS / ÁREAS DE TRABAJO (vista simple en index.html) --- */
 /* Reemplaza la grilla de tarjetas por una lista limpia centrada */
 .services-list {
   list-style: none;           /* Sin viñetas por defecto */
-  max-width: 480px;           /* Ancho máximo de la lista. Cambiá si querés más ancha */
+  max-width: 560px;           /* Un poco más ancha para que entren las descripciones cortas */
   margin: 0 auto;             /* Centrada en la página */
   padding: 0;
 }
@@ -368,7 +461,7 @@ nav ul li a.active {
 }
 
 /* --- ENLACE EN EL TÍTULO DE SERVICIOS --- */
-/* El título "Servicios" se vuelve clickeable */
+/* El título "Áreas de trabajo" se vuelve clickeable */
 .section-title a {
   color: #1B4B82;             /* Mismo azul que el título normal */
   text-decoration: none;
@@ -377,6 +470,92 @@ nav ul li a.active {
 
 .section-title a:hover {
   opacity: 0.75;              /* Se aclara un poco al pasar el mouse */
+}
+
+
+/* ============================================================
+   SECCIÓN PROYECTOS
+   ============================================================ */
+
+.projects-section {
+  padding: 64px 20px;
+  background-color: #F5F0E8;
+}
+
+/* --- GRILLA DE PROYECTOS --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- CADA TARJETA DE PROYECTO --- */
+.project-item {
+  background: #EEEBE3;
+  border: 1px solid #D6CFC3;
+  border-radius: 8px;
+  padding: 22px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-item:hover {
+  box-shadow: 0 4px 20px rgba(27, 75, 130, 0.1);
+  transform: translateY(-3px);
+}
+
+.project-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1B4B82;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.project-item p {
+  font-size: 0.875rem;
+  color: #555555;
+}
+
+
+/* ============================================================
+   SECCIÓN "ACTUALMENTE"
+   ============================================================ */
+
+.now-section {
+  padding: 64px 20px;
+  background-color: #EEEBE3;
+}
+
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.now-item {
+  background: #F5F0E8;
+  border: 1px solid #D6CFC3;
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.now-item h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1B4B82;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.now-item p {
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.6;
 }
 
 
@@ -451,13 +630,13 @@ nav ul li a.active {
 .whatsapp-section {
   padding: 52px 20px;
   text-align: center;
-  background-color: #EEEBE3;
+  background-color: #F5F0E8;
 }
 
 .whatsapp-section p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555555;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 /* --- BOTÓN PRINCIPAL (Verde WhatsApp) --- */
@@ -470,8 +649,8 @@ nav ul li a.active {
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 32px;
+  font-size: 0.95rem;
+  padding: 12px 28px;         /* Un poco más chico: menos protagonismo, sigue siendo claro */
   border-radius: 50px;       /* Bordes completamente redondeados */
   border: none;
   cursor: pointer;
@@ -487,19 +666,19 @@ nav ul li a.active {
 
 /* --- ÍCONO WHATSAPP DENTRO DEL BOTÓN --- */
 .btn-whatsapp svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: #fff;
 }
 
 
 /* ============================================================
-   SECCIÓN BLOG
+   SECCIÓN BLOG / CONOCIMIENTOS
    ============================================================ */
 
 .blog-section {
   padding: 64px 20px;
-  background-color: #F5F0E8;
+  background-color: #EEEBE3;
 }
 
 /* --- GRILLA DEL BLOG --- */
@@ -514,7 +693,7 @@ nav ul li a.active {
 
 /* --- TARJETA DE ARTÍCULO --- */
 .blog-card {
-  background: #EEEBE3;
+  background: #F5F0E8;
   border: 1px solid #D6CFC3;
   border-radius: 8px;
   overflow: hidden;
@@ -668,6 +847,8 @@ footer p {
     gap: 20px;
   }
 
+  /* --- FORMACIÓN / PROYECTOS / ACTUALMENTE: ya se adaptan solos con auto-fit --- */
+
   /* --- SERVICIOS: ya se adaptan solos con auto-fill --- */
 
   /* --- BLOG: 1 columna en móvil --- */
@@ -690,3 +871,4 @@ footer p {
     font-size: 1.8rem;
   }
 }
+

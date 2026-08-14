@@ -5,20 +5,14 @@
        HEAD — Configuración de la página
        ============================================================ -->
 
-  <!-- Codificación de caracteres: necesaria para acentos y ñ -->
   <meta charset="UTF-8">
-
-  <!-- Hace que la página se vea bien en celulares -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Título que aparece en la pestaña del navegador -->
-  <title>Sandro Romero — Servicio Técnico de Computadoras · Corrientes</title>
+  <!-- Título: ahora prioriza tu nombre como marca personal -->
+  <title>Sandro Romero — Técnico en Informática · Corrientes</title>
 
-  <!-- Descripción para buscadores como Google -->
-  <meta name="description" content="Servicio técnico de computadoras en Corrientes. Reparación y mantenimiento de PC y Notebook">
+  <meta name="description" content="Sandro Romero, técnico en informática en Corrientes. Reparación, mantenimiento y tecnología aplicada a PC y notebooks.">
 
-  <!-- Enlace al archivo de estilos CSS -->
-  <!-- Si movés el archivo styles.css a otra carpeta, actualizá esta ruta -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -26,33 +20,25 @@
 
   <!-- ============================================================
        HEADER — Encabezado / Barra de navegación
-       ============================================================
-       Esta barra queda pegada arriba cuando se hace scroll (sticky).
-       Para cambiar los colores de la barra, editá el selector
-       "header" y "header-inner" en el CSS.
        ============================================================ -->
 
   <header>
     <div class="header-inner">
 
-      <!-- LOGO: tu nombre como marca -->
-      <!-- Cambiá el texto para modificar cómo aparece el logo -->
       <a href="index.html" class="logo">Sandro Romero</a>
 
-      <!-- MENÚ DE NAVEGACIÓN -->
-      <!-- Para agregar más páginas, copiá un <li> y cambiá el href y el texto -->
-      <!-- La clase "active" marca la página actual (se ve subrayada en azul) -->
+      <!-- MENÚ actualizado: agrega Sobre mí y Proyectos -->
       <nav>
         <ul id="nav-menu">
           <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
           <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
 
-      <!-- BOTÓN HAMBURGUESA para móviles -->
-      <!-- Se muestra solo en pantallas pequeñas (ver CSS → @media) -->
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <span></span>
         <span></span>
@@ -64,131 +50,114 @@
 
 
   <!-- ============================================================
-       SECCIÓN HERO — Primera sección visible al entrar a la página
-       ============================================================
-       Contiene el título principal y el subtítulo.
-       Para cambiar el tamaño o color del título, editá
-       ".hero h1" y ".hero h2" en el CSS.
+       SECCIÓN HERO — Ahora habla de VOS, no del "servicio"
        ============================================================ -->
 
   <section class="hero">
-    <!-- Título principal: pensado para leerse bien en móviles -->
-    <!-- El color azul se controla en CSS con color: #1B4B82 en ".hero h1" -->
-    <h1>Servicio Técnico Informático<br>Ciudad de Corrientes</h1>
-
-    <!-- Subtítulo: un poco más chico que el título -->
-    <h2>Reparación y mantenimiento de PC y Notebook </h2>
+    <h1>Sandro Romero</h1>
+    <h2>Técnico en Informática</h2>
+    <p style="max-width:600px;margin:12px auto 0;opacity:0.85;">
+      Reparación, mantenimiento y optimización de computadoras y notebooks.
+      Soluciones informáticas, hardware y tecnología aplicada.
+    </p>
+    <span class="location-tag">Corrientes, Argentina</span>
   </section>
 
 
   <!-- ============================================================
        SECCIÓN CARRUSEL DE FOTOS
-       ============================================================
-       El carrusel cambia de imagen automáticamente cada 4 segundos.
-       Para agregar tus propias fotos:
-         1. Guardá las fotos en la carpeta "img/"
-         2. En cada .carousel-slide, reemplazá el div.slide-placeholder
-            por: <img src="img/nombre-de-tu-foto.jpg" alt="descripción">
-       Para cambiar la velocidad del carrusel, buscá en el JS:
-         setInterval(nextSlide, 4000) → cambiá 4000 (milisegundos)
        ============================================================ -->
 
   <section class="carousel-section">
     <div class="carousel-wrapper">
 
-      <!-- PISTA DEL CARRUSEL: contiene todos los slides -->
       <div class="carousel-track" id="carouselTrack">
 
-        <!-- SLIDE 1 -->
-        <!-- Para agregar tu foto: borrá el div.slide-placeholder y poné:
-             <img src="img/trabajo-01.jpg" alt="Cambio de pantalla notebook"> -->
-        
         <div class="carousel-slide">
           <img src="img/notebook-abierto.jpeg" alt="Notebook abierto">
         </div>
 
-        <!-- SLIDE 2 -->
         <div class="carousel-slide">
           <img src="img/netbook-g15.jpg" alt="Netbook del gobierno">
         </div>
 
-        <!-- SLIDE 3 -->
         <div class="carousel-slide">
           <img src="img/pc-standar.jpg" alt="PC de oficina">
         </div>
 
-        <!-- SLIDE 4 -->
         <div class="carousel-slide">
           <img src="img/notebook-office.jpg" alt="Office instalada">
         </div>
 
-        <!-- SLIDE 5 -->
         <div class="carousel-slide">
           <img src="img/pc-gamer.jpg" alt="PC de alto rendimiento">
         </div>
-        
-        <!-- SLIDE 6 -->
+
         <div class="carousel-slide">
           <img src="img/notebook-gamer.jpg" alt="Notebook gamer">
         </div>
 
-        <!-- SLIDE 7 -->
         <div class="carousel-slide">
           <img src="img/pc-standar-2.jpg" alt="PC standar">
         </div>
-        
-        <!-- SLIDE 8 -->
+
         <div class="carousel-slide">
           <img src="img/pasta-termica.jpeg" alt="Colocación de pasta térmica">
         </div>
 
-        
-
-        <!-- Para agregar más slides, copiá el bloque de arriba y cambiá el número -->
-
       </div><!-- fin .carousel-track -->
 
-     
     </div><!-- fin .carousel-wrapper -->
 
-    <!-- PUNTOS INDICADORES -->
-    <!-- Se generan automáticamente con JavaScript. No hace falta tocarlos. -->
     <div class="carousel-dots" id="carouselDots"></div>
 
   </section><!-- fin .carousel-section -->
 
 
   <!-- ============================================================
+       SECCIÓN SOBRE MÍ (nueva)
+       ============================================================ -->
+
+  <section class="about-section">
+    <h2 class="section-title">Sobre mí</h2>
+    <div class="section-divider"></div>
+    <p>
+      Soy Sandro Romero, técnico orientado al área de informática, hardware y tecnología.
+      Mi trabajo se centra principalmente en el diagnóstico, reparación, mantenimiento
+      y optimización de computadoras y notebooks.
+    </p>
+    <p style="margin-top:14px;">
+      También tengo formación en mecatrónica y un interés particular por la electrónica,
+      la automatización y el desarrollo de proyectos tecnológicos. Me gusta entender
+      cómo funcionan las cosas, encontrar el origen de los problemas y buscar
+      soluciones prácticas.
+    </p>
+  </section>
+
+
+  <!-- ============================================================
        SECCIÓN ESTADÍSTICAS
-       ============================================================
-       Tres íconos con datos destacados.
-       Para cambiar los números o textos, editá el contenido
-       de cada .stat-number y .stat-label.
        ============================================================ -->
 
   <section class="stats-section">
     <div class="stats-grid">
 
-      <!-- ESTADÍSTICA 1 -->
       <div>
         <span class="stat-icon">🛠️</span>
-        <!-- Cambiá el número aquí -->
         <span class="stat-number">+1000</span>
-        <span class="stat-label">Trabajos realizados</span>
+        <span class="stat-label">Equipos atendidos</span>
       </div>
 
-      <!-- ESTADÍSTICA 2 -->
       <div>
         <span class="stat-icon">📅</span>
         <span class="stat-number">+10</span>
         <span class="stat-label">Años de experiencia</span>
       </div>
 
-      <!-- ESTADÍSTICA 3 -->
       <div>
         <span class="stat-icon">✅</span>
         <span class="stat-number">100%</span>
-        <span class="stat-label">Garantía en trabajos</span>
+        <span class="stat-label">Compromiso con cada trabajo</span>
       </div>
 
     </div>
@@ -196,64 +165,127 @@
 
 
   <!-- ============================================================
-     SECCIÓN SERVICIOS
-     ============================================================
-     Lista simple de servicios. Sin textos extra.
-     El título "Servicios" es un enlace a servicios.html
-     Para agregar uno nuevo: copiá un <li> y cambiá el texto.
-     ============================================================ -->
+       SECCIÓN FORMACIÓN (nueva)
+       ============================================================ -->
 
-<section class="services-section">
+  <section class="formacion-section">
+    <h2 class="section-title">Formación</h2>
+    <div class="section-divider"></div>
 
-  <!-- El título es un enlace a la página de servicios -->
-  <h2 class="section-title">
-    <a href="servicios.html">Servicios</a>
-  </h2>
-  <div class="section-divider"></div>
-
-  <!-- Lista simple de servicios, sin descripciones -->
-  <ul class="services-list">
-    <li>Instalación de Windows</li>
-    <li>Paquete Office</li>
-    <li>Programas esenciales</li>
-    <li>Configuración y optimización</li>
-    <li>Eliminación de virus</li>
-    <li>Backups de archivos</li>
-    <li>Clonado y cambio HDD→SSD</li>
-    <li>Desbloqueo de netbook del gobierno</li>
-    <li>Limpieza y mantenimiento de hardware</li>
-    <li>Reparación de bisagras</li>
-    <li>Reparaciones en general</li>
-  </ul>
-
-</section>
-
-
-  
+    <div class="formacion-grid">
+      <div class="formacion-item">
+        <h3>Tecnicatura Universitaria en Informática</h3>
+        <p>En formación</p>
+      </div>
+      <div class="formacion-item">
+        <h3>Técnico Superior en Mecatrónica</h3>
+        <p>Automatización, electrónica y robótica</p>
+      </div>
+      <div class="formacion-item">
+        <h3>Reparación de Computadoras y Redes</h3>
+        <p>UNNE</p>
+      </div>
+      <div class="formacion-item">
+        <h3>Talentos Digitales</h3>
+        <p>Formación tecnológica</p>
+      </div>
+    </div>
+  </section>
 
 
   <!-- ============================================================
-       SECCIÓN BOTÓN WHATSAPP
+       SECCIÓN ÁREAS DE TRABAJO (antes "Servicios")
        ============================================================
-       IMPORTANTE: reemplazá el número de WhatsApp en el href.
-       Formato: https://wa.me/549XXXXXXXXXX
-       Ejemplo para Corrientes (0379): https://wa.me/5493794000000
-       El mensaje pre-escrito está en el parámetro ?text=
-       Podés cambiar ese texto también.
+       El título sigue enlazando a servicios.html donde podés
+       mantener el detalle completo de precios/servicios puntuales.
+       ============================================================ -->
+
+  <section class="services-section">
+
+    <h2 class="section-title">
+      <a href="servicios.html">Áreas de trabajo</a>
+    </h2>
+    <div class="section-divider"></div>
+
+    <ul class="services-list">
+      <li>💻 Hardware — diagnóstico, limpieza, actualización y reparación</li>
+      <li>🖥️ Sistemas — Windows, instalación, configuración y optimización</li>
+      <li>💾 Almacenamiento — HDD, SSD, clonación y recuperación de datos</li>
+      <li>🔧 Reparación — diagnóstico y reparación de fallas de hardware</li>
+      <li>🌐 Informática — configuración de equipos y soluciones informáticas</li>
+      <li>⚙️ Tecnología — electrónica, automatización y proyectos técnicos</li>
+    </ul>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECCIÓN PROYECTOS (nueva)
+       ============================================================ -->
+
+  <section class="projects-section">
+    <h2 class="section-title">Proyectos</h2>
+    <div class="section-divider"></div>
+
+    <div class="projects-grid">
+      <div class="project-item">
+        <h3>🤖 Brazo robótico</h3>
+        <p>Proyecto de automatización y robótica.</p>
+      </div>
+      <div class="project-item">
+        <h3>🔌 Arduino</h3>
+        <p>Proyectos con sensores, LEDs, electrónica y control.</p>
+      </div>
+      <div class="project-item">
+        <h3>💻 Desarrollo web</h3>
+        <p>Diseño y desarrollo de mi sitio personal.</p>
+      </div>
+      <div class="project-item">
+        <h3>⚙️ Mecatrónica</h3>
+        <p>Proyectos relacionados con automatización y electrónica.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECCIÓN ACTUALMENTE (nueva)
+       ============================================================ -->
+
+  <section class="now-section">
+    <h2 class="section-title">Actualmente</h2>
+    <div class="section-divider"></div>
+
+    <div class="now-grid">
+      <div class="now-item">
+        <h3>Formación</h3>
+        <p>Tecnicatura Universitaria en Informática</p>
+      </div>
+      <div class="now-item">
+        <h3>Área profesional</h3>
+        <p>Reparación y mantenimiento de PC y notebooks</p>
+      </div>
+      <div class="now-item">
+        <h3>Intereses</h3>
+        <p>Hardware · Electrónica · Automatización · Programación · Tecnología</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECCIÓN CONTACTO / WHATSAPP — ahora más discreta
        ============================================================ -->
 
   <section class="whatsapp-section">
-    <p>¿Tenés algún problema con tu equipo? Escribime sin compromiso.</p>
+    <p>¿Querés hacer una consulta? Escribime.</p>
 
-    <!-- BOTÓN WHATSAPP -->
-    <!-- Reemplazá el href con tu número real -->
     <a
       href="https://wa.me/5493794671403?text=Hola%20Sandro%2C%20necesito%20ayuda%20con%20mi%20equipo"
       target="_blank"
       rel="noopener noreferrer"
       class="btn-whatsapp"
     >
-      <!-- Ícono SVG de WhatsApp -->
       <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.738 5.47 2.027 7.773L0 32l8.468-2.002A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.77-1.853l-.484-.287-5.025 1.187 1.236-4.895-.316-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.946c-.399-.2-2.36-1.164-2.726-1.296-.366-.133-.633-.2-.9.2-.266.399-1.031 1.296-1.265 1.562-.233.266-.466.3-.865.1-.4-.2-1.688-.622-3.215-1.984-1.188-1.06-1.99-2.37-2.223-2.77-.233-.4-.025-.615.175-.814.18-.18.4-.466.6-.7.2-.233.266-.4.4-.666.133-.266.066-.5-.033-.7-.1-.2-.9-2.164-1.232-2.964-.325-.78-.656-.674-.9-.687-.233-.012-.5-.015-.766-.015s-.7.1-.9.5c-.266.466-.933 1.265-1.03 3.031-.003.05-.003.104-.003.155 0 1.74.618 3.33 1.728 4.634.2.233 2.726 4.164 6.605 5.677 3.879 1.513 3.879 1.008 4.578.945.7-.066 2.26-.925 2.58-1.816.32-.89.32-1.654.225-1.814-.093-.16-.36-.26-.76-.46z"/>
       </svg>
@@ -263,32 +295,18 @@
 
 
   <!-- ============================================================
-       SECCIÓN BLOG
-       ============================================================
-       Artículos basados en los servicios. Cada tarjeta tiene:
-       - Un ícono o foto (editá dentro de .blog-img)
-       - Una etiqueta de categoría (.blog-tag)
-       - Un título (.blog-card h3)
-       - Un texto descriptivo (.blog-card p)
-
-       Para agregar tu propia foto al blog:
-         Dentro de .blog-img, poné:
-         <img src="img/tu-foto.jpg" alt="descripción de la foto">
+       SECCIÓN BLOG (ahora "Conocimientos" — mismo contenido)
        ============================================================ -->
 
   <section class="blog-section">
-    <h2 class="section-title">Blog</h2>
-    <p class="section-subtitle">Consejos, tips e información útil sobre el cuidado de tu computadora</p>
+    <h2 class="section-title">Conocimientos</h2>
+    <p class="section-subtitle">Artículos técnicos sobre hardware, sistemas, seguridad y mantenimiento</p>
     <div class="section-divider"></div>
 
     <div class="blog-grid">
 
-      <!-- ARTÍCULO 1: Windows -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Instalando-windows.png" alt="Instalación Windows">
-          <!-- Reemplazá con tu imagen: <img src="img/blog-windows.jpg" alt="Instalación Windows"> -->
-  
-        </div>
+        <div class="blog-img"><img src="img/Instalando-windows.png" alt="Instalación Windows"></div>
         <div class="blog-body">
           <span class="blog-tag">Sistema Operativo</span>
           <h3>¿Por qué reinstalar Windows puede salvar tu PC?</h3>
@@ -296,11 +314,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 2: Office -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Instalacion-office.jpg" alt="Instalación Office">
-        
-        </div>
+        <div class="blog-img"><img src="img/Instalacion-office.jpg" alt="Instalación Office"></div>
         <div class="blog-body">
           <span class="blog-tag">Productividad</span>
           <h3>Office original vs. alternativas gratuitas: ¿cuál conviene?</h3>
@@ -308,11 +323,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 3: Optimización -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Rendimiento.jpg" alt="Rendimiento del equipo">
-        
-        </div>
+        <div class="blog-img"><img src="img/Rendimiento.jpg" alt="Rendimiento del equipo"></div>
         <div class="blog-body">
           <span class="blog-tag">Rendimiento</span>
           <h3>5 configuraciones que hacen más rápida tu PC hoy mismo</h3>
@@ -320,11 +332,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 4: Virus -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Virus.jpg" alt="Virus-en-PC">
-        
-        </div>
+        <div class="blog-img"><img src="img/Virus.jpg" alt="Virus-en-PC"></div>
         <div class="blog-body">
           <span class="blog-tag">Seguridad</span>
           <h3>Señales de que tu PC tiene un virus (y qué hacer)</h3>
@@ -332,11 +341,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 5: Backup -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Pendrive.jpg" alt="Pendrive-para-backups">
-        
-        </div>
+        <div class="blog-img"><img src="img/Pendrive.jpg" alt="Pendrive-para-backups"></div>
         <div class="blog-body">
           <span class="blog-tag">Protección de datos</span>
           <h3>¿Hacés backup? La única pregunta que importa antes de traer el equipo</h3>
@@ -344,11 +350,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 6: SSD -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/hdd-ssd.jpg" alt="HDD vs SSD">
-      
-        </div>
+        <div class="blog-img"><img src="img/hdd-ssd.jpg" alt="HDD vs SSD"></div>
         <div class="blog-body">
           <span class="blog-tag">Hardware</span>
           <h3>Cambiar el disco por un SSD: la mejor inversión para tu notebook vieja</h3>
@@ -356,11 +359,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 7: Limpieza -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Mantenimiento-pc.jpg" alt="Mantenimiento de una PC">
-      
-        </div>
+        <div class="blog-img"><img src="img/Mantenimiento-pc.jpg" alt="Mantenimiento de una PC"></div>
         <div class="blog-body">
           <span class="blog-tag">Mantenimiento</span>
           <h3>¿Cada cuánto hay que limpiar la PC por dentro?</h3>
@@ -368,11 +368,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 8: Bisagras -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Bisagras.jpg" alt="Bisagras rotas de notebook">
-    
-        </div>
+        <div class="blog-img"><img src="img/Bisagras.jpg" alt="Bisagras rotas de notebook"></div>
         <div class="blog-body">
           <span class="blog-tag">Reparación</span>
           <h3>Bisagra rota en la notebook: ¿se puede reparar o hay que cambiarla?</h3>
@@ -380,11 +377,8 @@
         </div>
       </article>
 
-      <!-- ARTÍCULO 9: Netbook gobierno -->
       <article class="blog-card">
-        <div class="blog-img"><img src="img/Netbook-del-gobierno.jpg" alt="Desbloqueo de netbook del gobierno">
-    
-        </div>
+        <div class="blog-img"><img src="img/Netbook-del-gobierno.jpg" alt="Desbloqueo de netbook del gobierno"></div>
         <div class="blog-body">
           <span class="blog-tag">Educación</span>
           <h3>Netbook del gobierno bloqueada: qué podés hacer</h3>
@@ -398,8 +392,6 @@
 
   <!-- ============================================================
        FOOTER — Pie de página
-       ============================================================
-       Para cambiar el texto del copyright, editá el párrafo de abajo.
        ============================================================ -->
 
   <footer>
@@ -408,17 +400,14 @@
 
 
   <!-- ============================================================
-       JAVASCRIPT — Lógica del carrusel y menú hamburguesa
+       JAVASCRIPT — Carrusel y menú hamburguesa
        ============================================================
-       Este bloque va al final del body para que cargue luego del HTML.
-       
-       CARRUSEL:
-       - Cambia de slide automáticamente cada 4000ms (4 segundos)
-       - Para cambiar la velocidad, modificá el número en setInterval()
-       - Los botones prev/next también funcionan manualmente
-       
-       MENÚ:
-       - El botón hamburguesa muestra/oculta el menú en móviles
+       NOTA: saqué las referencias a "prevBtn" y "nextBtn" que tenías
+       en el script original — esos botones no existen en el HTML,
+       así que esas líneas rompían el JavaScript (frenaban el
+       autoplay y cualquier script que viniera después). El carrusel
+       ahora solo usa autoplay + los puntos indicadores, que son los
+       controles que sí tenés en el HTML.
        ============================================================ -->
 
   <script>
@@ -428,13 +417,10 @@
     const hamburger = document.getElementById('hamburger');
     const navMenu   = document.getElementById('nav-menu');
 
-    // Al hacer clic en el botón hamburguesa, alterna la clase "open"
-    // La clase "open" hace visible el menú (ver CSS → @media → nav ul.open)
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('open');
     });
 
-    // Cierra el menú si se hace clic en un link del menú (buena UX en móvil)
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -444,54 +430,34 @@
 
     /* ---- CARRUSEL ---- */
 
-const track    = document.getElementById('carouselTrack');
-const slides   = track.querySelectorAll('.carousel-slide');
-const dotsWrap = document.getElementById('carouselDots');
+    const track    = document.getElementById('carouselTrack');
+    const slides   = track.querySelectorAll('.carousel-slide');
+    const dotsWrap = document.getElementById('carouselDots');
 
-let current = 0;
+    let current = 0;
 
-// Crear puntos indicadores
-slides.forEach((_, i) => {
-  const dot = document.createElement('button');
-  dot.classList.add('dot');
-  dot.setAttribute('aria-label', 'Ir al slide ' + (i + 1));
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => goTo(i));
-  dotsWrap.appendChild(dot);
-});
+    // Crear puntos indicadores
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      dot.setAttribute('aria-label', 'Ir al slide ' + (i + 1));
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
 
-// Función para ir a un slide
-function goTo(index) {
-  current = (index + slides.length) % slides.length;
-  track.style.transform = 'translateX(-' + (current * 100) + '%)';
-  dotsWrap.querySelectorAll('.dot').forEach((dot, i) => {
-    dot.classList.toggle('active', i === current);
-  });
-}
-
-// Avance automático cada 1 segundo
-// Para cambiar la velocidad, modificá el número 1000 (milisegundos)
-// 1000 = 1 segundo | 2000 = 2 segundos | 3000 = 3 segundos
-setInterval(() => goTo(current + 1), 1500);
-
-    // Botón anterior
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-
-    // Botón siguiente
-    nextBtn.addEventListener('click', () => goTo(current + 1));
+    // Función para ir a un slide
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsWrap.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+      });
+    }
 
     // Avance automático cada 4 segundos
-    // Para cambiar la velocidad, modificá el número 4000 (están en milisegundos)
-    // 4000 = 4 segundos | 3000 = 3 segundos | 6000 = 6 segundos
-    let autoplay = setInterval(() => goTo(current + 1), 2000);
-
-    // Pausa el autoplay cuando el usuario interactúa manualmente
-    [prevBtn, nextBtn].forEach(btn => {
-      btn.addEventListener('click', () => {
-        clearInterval(autoplay);
-        autoplay = setInterval(() => goTo(current + 1), 4000);
-      });
-    });
+    // Para cambiar la velocidad, modificá el número (en milisegundos)
+    setInterval(() => goTo(current + 1), 4000);
 
   </script>
 
