@@ -142,6 +142,7 @@ nav ul li a.active {
 
 .hero {
   min-height: 500px;
+  padding: 70px 20px;
 
   display: flex;
   flex-direction: column;
@@ -149,18 +150,19 @@ nav ul li a.active {
   align-items: center;
 
   text-align: center;
-
   color: white;
 
+  /* Imagen de fondo + capa oscura para facilitar la lectura */
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.68),
-      rgba(0, 0, 0, 0.68)
+      rgba(0, 0, 0, 0.64),
+      rgba(0, 0, 0, 0.64)
     ),
     url("../img/banner-tecnologia.jpg");
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* --- TÍTULO PRINCIPAL --- */
@@ -837,14 +839,29 @@ footer p {
   .hamburger {
     display: flex; /* Mostrar hamburguesa en móvil */
   }
+  /* --- HERO / BANNER ADAPTADO A MÓVIL --- */
+  .hero {
+    min-height: 420px;
+    padding: 60px 20px;
+    background-position: center center;
+  }
 
-  /* --- TÍTULO HERO MÁS CHICO EN MÓVIL --- */
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    line-height: 1.25;
   }
 
   .hero h2 {
     font-size: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    max-width: 340px;
+  }
+
+  .location-tag {
+    font-size: 0.8rem;
   }
 
   /* --- CARRUSEL MÁS BAJO EN MÓVIL --- */
@@ -877,15 +894,18 @@ footer p {
 @media (max-width: 480px) {
   /* Ajustes extra para celulares muy chicos */
   .hero {
-    padding: 48px 16px 40px;
+    min-height: 390px;
+    padding: 50px 16px 40px;
+    background-position: center center;
   }
 
   .hero h1 {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
   }
 
   .stat-number {
     font-size: 1.8rem;
   }
 }
+
 
