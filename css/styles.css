@@ -141,9 +141,26 @@ nav ul li a.active {
    ============================================================ */
 
 .hero {
-  padding: 70px 20px 60px;
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  background-color: #F5F0E8;
+
+  color: white;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.68),
+      rgba(0, 0, 0, 0.68)
+    ),
+    url("../img/banner-tecnologia.jpg");
+
+  background-size: cover;
+  background-position: center;
 }
 
 /* --- TÍTULO PRINCIPAL --- */
@@ -152,7 +169,7 @@ nav ul li a.active {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 2rem;         /* En móvil se ve bien a este tamaño */
-  color: #1B4B82;          /* Azul principal */
+  color: #c3c6c9;          /* Azul principal */
   max-width: 700px;
   margin: 0 auto 16px;
   line-height: 1.3;
@@ -165,7 +182,7 @@ nav ul li a.active {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;        /* Más liviano para diferenciarse del título */
   font-size: 1.15rem;
-  color: #555555;          /* Gris oscuro */
+  color: #f7f0f0;          /* Gris oscuro */
   max-width: 500px;
   margin: 0 auto;
 }
@@ -176,7 +193,7 @@ nav ul li a.active {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  color: #555555;
+  color: #f0eded;
 }
 
 /* --- ETIQUETA DE UBICACIÓN (Corrientes, Argentina) --- */
