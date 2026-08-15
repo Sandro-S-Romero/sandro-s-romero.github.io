@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí — Sandro Romero</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER igual al de todas las páginas -->
+  <header>
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">Sandro Romero</a>
+
+      <!-- MENÚ actualizado: agrega Sobre mí y Proyectos -->
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="sobre-mi.html"class="active">Sobre mí</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- CONTENIDO SOBRE MÍ -->
+  <!-- Cambiá el texto por tu información real -->
+  <section style="padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+
+    <h1 style="color: #1B4B82; font-size: 2rem; margin-bottom: 8px;">
+      Hola, soy Sandro Romero
+    </h1>
+    
+    <!-- FOTO — reemplazá la ruta por tu foto real -->
+    <img src="img/sandro-perfil.jpeg" alt="Sandro Romero"
+         style="width: 180px; height: 180px; border-radius: 50%;
+                object-fit: cover; margin-bottom: 32px;
+                border: 4px solid #1B4B82;">
+
+    <p style="color: #333; font-size: 1rem; line-height: 1.8; margin-bottom: 20px;">
+      <!-- CAMBIÁ ESTE TEXTO POR TU HISTORIA REAL -->
+      Soy técnico en informática con más de 10 años de experiencia
+      en Corrientes. Me especializo en reparación de computadoras,
+      instalación de sistemas y mantenimiento de equipos para hogares
+      y pequeñas empresas.
+    </p>
+
+    <p style="color: #333; font-size: 1rem; line-height: 1.8; margin-bottom: 20px;">
+      Me gusta explicar con claridad qué le pasa al equipo antes de
+      cobrar cualquier cosa. Trabajo con honestidad y garantía en
+      todas las reparaciones.
+    </p>
+
+    <!-- LISTA DE DATOS PERSONALES/PROFESIONALES -->
+    <ul class="services-list" style="margin-top: 32px;">
+      <li>+10 años de experiencia en el rubro</li>
+      <li>+1000 equipos reparados</li>
+      <li>Atención en el local y a domicilio</li>
+      <li>Garantía en todas las reparaciones</li>
+      <li>Presupuesto sin cargo</li>
+    </ul>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>@2026 Sandro S. Romero · Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

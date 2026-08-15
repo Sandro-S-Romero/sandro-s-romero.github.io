@@ -111,7 +111,7 @@ nav ul li a:hover {
 /* --- LINK ACTIVO (la página actual se muestra en azul) --- */
 nav ul li a.active {
   color: #1B4B82;
-  border-bottom: 2px solid #1B4B82;
+  border-bottom: none;
   padding-bottom: 2px;
 }
 
@@ -150,7 +150,7 @@ nav ul li a.active {
 /* Cambiá font-size para ajustar el tamaño del título principal */
 .hero h1 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2rem;         /* En móvil se ve bien a este tamaño */
   color: #1B4B82;          /* Azul principal */
   max-width: 700px;
@@ -163,7 +163,7 @@ nav ul li a.active {
 /* Un poco más chico que el título principal */
 .hero h2 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;        /* Más liviano para diferenciarse del título */
+  font-weight: 700;        /* Más liviano para diferenciarse del título */
   font-size: 1.15rem;
   color: #555555;          /* Gris oscuro */
   max-width: 500px;
@@ -174,7 +174,7 @@ nav ul li a.active {
 /* Usado en el hero: reparación, mantenimiento y optimización... */
 .hero p {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   color: #555555;
 }
