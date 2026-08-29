@@ -487,7 +487,7 @@ nav ul li a.active {
 /* Tilde azul antes de cada ítem */
 .services-list li::before {
   content: '✔';
-  color: #1B4B82;
+  color: #038f0f;
   font-size: 0.78rem;
   flex-shrink: 0;
 }
