@@ -60,8 +60,8 @@ img {
 /* --- BARRA DE NAVEGACIÓN FIJA ARRIBA --- */
 /* position: sticky hace que quede pegada al scroll */
 header {
-  background-color: #e6e0e0; /* Mismo color que el fondo */
-  border-bottom: 1px solid #bbacac; /* Línea separadora inferior */
+  background-color: #f0f0f0; /* Mismo color que el fondo */
+  border-bottom: 1px solid #a0c2a4; /* Línea separadora inferior */
   position: sticky;
   top: 0;
   z-index: 100; /* Se mantiene encima de todo el contenido */
@@ -84,7 +84,7 @@ header {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  color: #1B4B82; /* Azul principal */
+  color: #06a81c; /* Azul principal */
   letter-spacing: 0.5px;
 }
 .logo {
@@ -122,12 +122,12 @@ nav ul li a {
 
 /* --- HOVER DEL MENÚ --- */
 nav ul li a:hover {
-  color: #1B4B82; /* Se pone azul al pasar el mouse */
+  color: #06a81c; /* Se pone blanco al pasar el mouse */
 }
 
 /* --- LINK ACTIVO (la página actual se muestra en azul) --- */
 nav ul li a.active {
-  color: #1B4B82;
+  color:#06a81c ;
   border-bottom: none;
   padding-bottom: 2px;
 }
@@ -308,7 +308,7 @@ nav ul li a.active {
 }
 
 .dot.active {
-  background: #1B4B82; /* Punto activo en azul */
+  background: #06a81c; /* Punto activo en azul */
 }
 
 
@@ -361,7 +361,7 @@ nav ul li a.active {
 .stat-number {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #1B4B82; /* Azul para el número */
+  color: #06a81c; /* Azul para el número */
   display: block;
   margin-bottom: 6px;
 }
@@ -681,7 +681,7 @@ nav ul li a.active {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #25D366; /* Verde WhatsApp oficial */
+  background-color: #03b421; /* Verde WhatsApp oficial */
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -696,7 +696,7 @@ nav ul li a.active {
 }
 
 .btn-whatsapp:hover {
-  background-color: #1ebe5d;
+  background-color: #03b421;
   transform: translateY(-2px);
 }
 
@@ -805,7 +805,7 @@ nav ul li a.active {
    ============================================================ */
 
 footer {
-  background-color: #1B4B82; /* Azul oscuro para el footer */
+  background-color: #077916; /* verde oscuro para el footer */
   color: #fff;
   text-align: center;
   padding: 24px 20px;
