@@ -418,7 +418,7 @@ nav ul li a.active {
 .formacion-item h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #1B4B82;
+  color: #012706;
   margin-bottom: 6px;
   line-height: 1.4;
 }
@@ -443,7 +443,7 @@ nav ul li a.active {
 .section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #1B4B82;
+  color: #038803;
   text-align: center;
   margin-bottom: 12px;
 }
@@ -460,7 +460,7 @@ nav ul li a.active {
 .section-divider {
   width: 48px;
   height: 3px;
-  background: #1B4B82;
+  background: #019609;
   margin: 0 auto 40px;
   border-radius: 2px;
 }
