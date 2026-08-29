@@ -926,43 +926,75 @@ footer p {
 }
 
 
-/* Sobre mí */
+/* ============================================================
+   SOBRE MÍ — DISEÑO RESPONSIVE
+   ============================================================ */
+
 .sobre-mi-contenido {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .sobre-mi-texto {
-    flex: 1;
+  flex: 1;
+  min-width: 0;
 }
 
 .sobre-mi-foto {
-    flex-shrink: 0;
+  flex: 0 0 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sobre-mi-foto img {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #038009;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  display: block !important;
+  width: 230px !important;
+  height: 230px !important;
+  max-width: none !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid #038009 !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+
+/* ============================================================
+   SOBRE MÍ — CELULARES
+   ============================================================ */
+
 @media (max-width: 700px) {
-    .sobre-mi-contenido {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
 
-    .sobre-mi-foto img {
-        width: 190px;
-        height: 190px;
-    }
+  .sobre-mi-contenido {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
 
-    .sobre-mi-texto {
-        width: 100%;
-    }
+  .sobre-mi-foto {
+    order: 1;
+    flex: none;
+    width: 100%;
+  }
+
+  .sobre-mi-texto {
+    order: 2;
+    width: 100%;
+  }
+
+  .sobre-mi-foto img {
+    width: 190px !important;
+    height: 190px !important;
+    max-width: none !important;
+    border-radius: 50% !important;
+    border: 4px solid #038009 !important;
+  }
+
+  .sobre-mi-texto .services-list {
+    text-align: left;
+  }
 }
