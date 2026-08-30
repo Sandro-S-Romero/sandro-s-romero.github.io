@@ -170,7 +170,7 @@ nav ul li a.active {
   align-items: center;
 
   text-align: center;
-  color: rgb(248, 247, 247);
+  color: white;
 
   /* Imagen de fondo + capa oscura para facilitar la lectura */
   background-image:
@@ -191,7 +191,7 @@ nav ul li a.active {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 2rem;         /* En móvil se ve bien a este tamaño */
-  color: #ffffff;          /* Azul principal */
+  color: #c3c6c9;          /* Azul principal */
   max-width: 700px;
   margin: 0 auto 16px;
   line-height: 1.3;
