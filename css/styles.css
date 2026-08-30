@@ -1001,3 +1001,55 @@ footer p {
     text-align: left;
   }
 }
+/* ============================================================
+   BOTÓN WHATSAPP — HERO
+   ============================================================ */
+
+.hero-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 24px;
+  padding: 13px 25px;
+
+  background-color: #21A552;
+  color: #ffffff;
+
+  border-radius: 50px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  text-decoration: none;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+/* Ícono de WhatsApp */
+.hero-whatsapp svg {
+  width: 21px;
+  height: 21px;
+  fill: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Efecto al pasar el mouse */
+.hero-whatsapp:hover {
+  background-color: #188A43;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.30);
+}
+
+/* Efecto al hacer clic */
+.hero-whatsapp:active {
+  transform: translateY(-1px);
+}
