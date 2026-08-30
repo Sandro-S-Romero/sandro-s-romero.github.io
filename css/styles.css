@@ -84,7 +84,7 @@ header {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  color: #06a81c; /* Azul principal */
+  color: #21A552; /* Azul principal */
   letter-spacing: 0.5px;
 }
 .logo {
@@ -115,19 +115,19 @@ nav ul {
 nav ul li a {
   font-size: 0.92rem;
   font-weight: 500;
-  color: #1A1A1A;
+  color: #000000;
   transition: color 0.2s; /* Animación suave al hacer hover */
   letter-spacing: 0.3px;
 }
 
 /* --- HOVER DEL MENÚ --- */
 nav ul li a:hover {
-  color: #06a81c; /* Se pone blanco al pasar el mouse */
+  color: #21A552; /* Se pone blanco al pasar el mouse */
 }
 
 /* --- LINK ACTIVO (la página actual se muestra en azul) --- */
 nav ul li a.active {
-  color:#06a81c ;
+  color:#21A552 ;
   border-bottom: none;
   padding-bottom: 2px;
 }
@@ -147,7 +147,7 @@ nav ul li a.active {
   display: block;
   width: 24px;
   height: 2px;
-  background: #1A1A1A;
+  background: #000000;
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -308,7 +308,7 @@ nav ul li a.active {
 }
 
 .dot.active {
-  background: #06a81c; /* Punto activo en azul */
+  background: #21A552; /* Punto activo en azul */
 }
 
 
@@ -361,7 +361,7 @@ nav ul li a.active {
 .stat-number {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #06a81c; /* Azul para el número */
+  color: #21A552; /* Azul para el número */
   display: block;
   margin-bottom: 6px;
 }
@@ -443,7 +443,7 @@ nav ul li a.active {
 .section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #038803;
+  color:#21A552 ;
   text-align: center;
   margin-bottom: 12px;
 }
@@ -460,7 +460,7 @@ nav ul li a.active {
 .section-divider {
   width: 48px;
   height: 3px;
-  background: #019609;
+  background: #21A552;
   margin: 0 auto 40px;
   border-radius: 2px;
 }
@@ -487,7 +487,7 @@ nav ul li a.active {
 /* Tilde azul antes de cada ítem */
 .services-list li::before {
   content: '✔';
-  color: #038f0f;
+  color:#21A552 ;
   font-size: 0.78rem;
   flex-shrink: 0;
 }
@@ -681,7 +681,7 @@ nav ul li a.active {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #03b421; /* Verde WhatsApp oficial */
+  background-color: #21A552; /* Verde WhatsApp oficial */
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -696,7 +696,7 @@ nav ul li a.active {
 }
 
 .btn-whatsapp:hover {
-  background-color: #03b421;
+  background-color: #21A552;
   transform: translateY(-2px);
 }
 
@@ -776,7 +776,7 @@ nav ul li a.active {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #1B4B82;
+  color: #21A552;
   background: rgba(27, 75, 130, 0.08);
   padding: 3px 10px;
   border-radius: 20px;
@@ -958,7 +958,7 @@ footer p {
   max-width: none !important;
   border-radius: 50% !important;
   object-fit: cover !important;
-  border: 4px solid #038009 !important;
+  border: 4px solid #21A552 !important;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -991,7 +991,7 @@ footer p {
     height: 190px !important;
     max-width: none !important;
     border-radius: 50% !important;
-    border: 4px solid #038009 !important;
+    border: 4px solid #21A552 !important;
   }
 
   .sobre-mi-texto .services-list {

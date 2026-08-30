@@ -3,53 +3,390 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contacto — Sandro Romero · Técnico en Informática</title>
+
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Font Awesome - Iconos -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
-    .coming-soon { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; }
-    .coming-soon span { font-size: 3rem; margin-bottom: 20px; display: block; }
-    .coming-soon h2 { color: #1B4B82; font-size: 1.5rem; margin-bottom: 10px; }
-    .coming-soon p  { color: #555555; font-size: 0.95rem; }
-    /* Cuando tengas el contenido listo, reemplazá este bloque .coming-soon
-       con tu formulario de contacto, número de teléfono, etc. */
+
+    /* ================================
+       ESTRUCTURA GENERAL
+       ================================= */
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+
+    /* ================================
+       SECCIÓN CONTACTO
+       ================================= */
+
+    .contacto {
+      min-height: 65vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 70px 20px;
+      background: #f7f9fc;
+    }
+
+    .contacto-contenedor {
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+    }
+
+    .contacto-contenedor h1 {
+      color: #21A552;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contacto-descripcion {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 35px;
+    }
+
+
+    /* ================================
+       TARJETA
+       ================================= */
+
+    .contacto-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* ================================
+       WHATSAPP
+       ================================= */
+
+    .whatsapp-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:#21A552 ;
+      color: white;
+
+      font-size: 3.2rem;
+
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+    }
+
+    .whatsapp-titulo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .numero-whatsapp {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+
+    /* ================================
+       BOTÓN WHATSAPP
+       ================================= */
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      background:#21A552 ;
+      color: white;
+
+      text-decoration: none;
+
+      padding: 13px 28px;
+
+      border-radius: 8px;
+
+      font-size: 1rem;
+      font-weight: 600;
+
+      transition: all 0.25s ease;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+    }
+
+
+    /* ================================
+       CORREO
+       ================================= */
+
+    .correo {
+      margin-top: 35px;
+      padding-top: 28px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .correo-icon {
+      color: #1B4B82;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .correo-titulo {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .correo a {
+      color: #1B4B82;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .correo a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ================================
+       PIE DE PÁGINA
+       ================================= */
+
+    footer {
+      margin-top: auto;
+    }
+
+
+    /* ================================
+       RESPONSIVE
+       ================================= */
+
+    @media (max-width: 600px) {
+
+      .contacto {
+        padding: 50px 15px;
+      }
+
+      .contacto-contenedor h1 {
+        font-size: 1.7rem;
+      }
+
+      .contacto-card {
+        padding: 35px 20px;
+      }
+
+      .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 2.8rem;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
+
+  <!-- ================================
+       HEADER
+       ================================= -->
+
   <header>
     <div class="header-inner">
 
-      <a href="index.html" class="logo">Sandro Romero</a>
+      <a href="index.html" class="logo">
+        Sandro Romero
+      </a>
 
-      <!-- MENÚ actualizado: agrega Sobre mí y Proyectos -->
       <nav>
         <ul id="nav-menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="sobre-mi.html">Sobre mí</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contacto.html"class="active">Contacto</a></li>
+
+          <li>
+            <a href="index.html">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="servicios.html">
+              Servicios
+            </a>
+          </li>
+
+          <li>
+            <a href="sobre-mi.html">
+              Sobre mí
+            </a>
+          </li>
+
+          <li>
+            <a href="blog.html">
+              Blog
+            </a>
+          </li>
+
+          <li>
+            <a href="contacto.html" class="active">
+              Contacto
+            </a>
+          </li>
+
         </ul>
       </nav>
 
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Abrir menú">
+
         <span></span>
         <span></span>
         <span></span>
+
       </button>
 
     </div>
   </header>
 
-  <div class="coming-soon">
-    <span>📞</span>
-    <h2>Contacto</h2>
-    <p>Próximamente. Por ahora podés escribirme por WhatsApp desde la página de inicio.</p>
-  </div>
-  <footer><p>@2026 Todos los derechos reservados — Sandro S. Romero</p></footer>
+
+
+  <!-- ================================
+       CONTACTO
+       ================================= -->
+
+  <main>
+
+    <section class="contacto">
+
+      <div class="contacto-contenedor">
+
+        <h1>Contacto</h1>
+
+        <p class="contacto-descripcion">
+          ¿Necesitás asistencia informática?
+          Estoy disponible para ayudarte.
+        </p>
+
+
+        <div class="contacto-card">
+
+
+          <!-- WHATSAPP -->
+
+          <div class="whatsapp-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+
+
+          <div class="numero-whatsapp">
+            +54 9 3794671403
+          </div>
+
+
+          <a
+            href="https://wa.me/3794671403"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Escribirme por WhatsApp
+
+          </a>
+
+
+          <!-- CORREO -->
+
+          <div class="correo">
+
+            <div class="correo-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="correo-titulo">
+              También podés contactarme por correo
+            </div>
+
+            <a href="mailto:romerosanseb@gmail.com">
+              romerosanseb@gmail.com
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================================
+       FOOTER
+       ================================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Sandro S. Romero<br>
+      Todos los derechos reservados
+    </p>
+
+  </footer>
+
+
+
+  <!-- ================================
+       MENÚ HAMBURGUESA
+       ================================= -->
+
   <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('nav-menu').classList.toggle('open');
-    });
+
+    document
+      .getElementById('hamburger')
+      .addEventListener('click', () => {
+
+        document
+          .getElementById('nav-menu')
+          .classList.toggle('open');
+
+      });
+
   </script>
+
 </body>
 </html>
