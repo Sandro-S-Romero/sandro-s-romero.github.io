@@ -175,7 +175,7 @@ nav ul li a.active {
       rgba(0, 0, 0, 0.64),
       rgba(0, 0, 0, 0.64)
     ),
-    url("../img/banner-tecnologia.jpg");
+    url("../img/portada-hero.jpg");
 
   background-size: cover;
   background-position: center;
@@ -233,7 +233,7 @@ nav ul li a.active {
 
 .carousel-section {
   padding: 48px 20px;
-  background-color: #EEEBE3; /* Fondo ligeramente diferente para diferenciar la sección */
+  background-color: #eef3ed; /* Fondo ligeramente diferente para diferenciar la sección */
 }
 
 /* --- CONTENEDOR DEL CARRUSEL --- */
@@ -243,7 +243,7 @@ nav ul li a.active {
   margin: 0 auto;
   overflow: hidden;          /* Oculta las imágenes que están fuera del área visible */
   border-radius: 8px;
-  border: 1px solid #D6CFC3;
+  border: 1px solid #f7faf5;
 }
 
 /* --- PISTA (track): todas las imágenes en fila horizontal --- */
@@ -343,7 +343,7 @@ nav ul li a.active {
 
 .stats-section {
   padding: 52px 20px;
-  background-color: #EEEBE3;
+  background-color: #e8f5ee;
 }
 
 /* --- GRILLA DE 3 COLUMNAS --- */
@@ -554,109 +554,6 @@ nav ul li a.active {
   color: #555555;
 }
 
-
-/* ============================================================
-   SECCIÓN "ACTUALMENTE"
-   ============================================================ */
-
-.now-section {
-  padding: 64px 20px;
-  background-color: #EEEBE3;
-}
-
-.now-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.now-item {
-  background: #F5F0E8;
-  border: 1px solid #D6CFC3;
-  border-radius: 8px;
-  padding: 22px;
-}
-
-.now-item h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #1B4B82;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.now-item p {
-  font-size: 0.9rem;
-  color: #333333;
-  line-height: 1.6;
-}
-
-
-/* ============================================================
-   SECCIÓN "CÓMO TRABAJO"
-   ============================================================ */
-
-.how-section {
-  padding: 64px 20px;
-  background-color: #F5F0E8;
-}
-
-/* --- PASOS EN FILA --- */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-/* --- CADA PASO --- */
-.step {
-  text-align: center;
-  padding: 28px 20px;
-  background: #EEEBE3;
-  border-radius: 8px;
-  border: 1px solid #D6CFC3;
-  position: relative;
-}
-
-/* --- NÚMERO DEL PASO (círculo azul) --- */
-.step-number {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #1B4B82;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-}
-
-.step h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1B4B82;
-  margin-bottom: 8px;
-}
-
-.step p {
-  font-size: 0.875rem;
-  color: #555555;
-  line-height: 1.7;
-}
-
-/* --- ÍCONO EN EL PASO --- */
-.step-icon {
-  font-size: 1.4rem;
-  display: block;
-  margin-bottom: 10px;
-}
 
 
 /* ============================================================
@@ -1091,4 +988,24 @@ footer p {
     font-size: 1rem;
   }
 
+}
+
+
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 55px;
+    padding: 13px 25px;
+    background-color: #21A552;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #188943;
+    transform: translateY(-2px);
 }
