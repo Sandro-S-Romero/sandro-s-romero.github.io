@@ -208,16 +208,7 @@ nav ul li a.active {
   color: #fbfffb;
 }
 
-/* --- ETIQUETA DE UBICACIÓN (Corrientes, Argentina) --- */
-/* Reemplaza al antiguo "Ciudad de Corrientes" del título principal */
-.location-tag {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #2E6DB4; /* Azul claro, más discreto que el azul principal */
-  margin-top: 14px;
-  letter-spacing: 0.3px;
-}
+
 
 
 /* ============================================================
@@ -650,7 +641,7 @@ nav ul li a.active {
    ============================================================ */
 
 footer {
-  background-color: #077916; /* verde oscuro para el footer */
+  background-color: #21A552; /* verde oscuro para el footer */
   color: #fff;
   text-align: center;
   padding: 24px 20px;
@@ -803,7 +794,7 @@ footer p {
   max-width: none !important;
   border-radius: 50% !important;
   object-fit: cover !important;
-  border: 4px solid #21A552 !important;
+  border: 4px solid #036b29 !important;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -836,7 +827,7 @@ footer p {
     height: 190px !important;
     max-width: none !important;
     border-radius: 50% !important;
-    border: 4px solid #21A552 !important;
+    border: 4px solid #03491d !important;
   }
 
   .sobre-mi-texto .services-list {
@@ -954,6 +945,6 @@ footer p {
 }
 
 .btn-whatsapp:hover {
-    background-color: #188943;
+    background-color: #21A552;
     transform: translateY(-2px);
 }
