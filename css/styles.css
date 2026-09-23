@@ -169,10 +169,30 @@ nav ul li a.active {
   text-align: center;
   color: #1a1a1a;
 
-  background-image: url("../img/portada-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen del hero */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Contenido por encima de la imagen */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* --- TÍTULO PRINCIPAL --- */
@@ -181,7 +201,7 @@ nav ul li a.active {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 2rem;         /* En móvil se ve bien a este tamaño */
-  color: #ffffff;          /* Azul principal */
+  color: #06bd34;          /* Azul principal */
   max-width: 700px;
   margin: 0 auto 16px;
   line-height: 1.3;
@@ -693,11 +713,14 @@ footer p {
     display: flex; /* Mostrar hamburguesa en móvil */
   }
   /* --- HERO / BANNER ADAPTADO A MÓVIL --- */
-  .hero {
-    min-height: 420px;
-    padding: 60px 20px;
-    background-position: center center;
-  }
+ .hero {
+  min-height: 420px;
+  padding: 60px 20px;
+}
+
+.hero-image img {
+  object-position: center center;
+}
 
   .hero h1 {
     font-size: 1.7rem;
@@ -747,10 +770,13 @@ footer p {
 @media (max-width: 480px) {
   /* Ajustes extra para celulares muy chicos */
   .hero {
-    min-height: 390px;
-    padding: 50px 16px 40px;
-    background-position: center center;
-  }
+  min-height: 390px;
+  padding: 50px 16px 40px;
+}
+
+.hero-image img {
+  object-position: center center;
+}
 
   .hero h1 {
     font-size: 1.45rem;
