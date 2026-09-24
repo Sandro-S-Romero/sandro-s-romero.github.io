@@ -200,8 +200,8 @@ nav ul li a.active {
 .hero h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 2rem;         /* En móvil se ve bien a este tamaño */
-  color: #06bd34;          /* Azul principal */
+  font-size: 1.5rem;         /* En móvil se ve bien a este tamaño */
+  color: #ffffff;          /* Azul principal */
   max-width: 700px;
   margin: 0 auto 16px;
   line-height: 1.3;
@@ -213,7 +213,7 @@ nav ul li a.active {
 .hero h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;        /* Más liviano para diferenciarse del título */
-  font-size: 1.15rem;
+  font-size: 3.15rem;
   color: #ffffff;          /* Gris oscuro */
   max-width: 500px;
   margin: 0 auto;
@@ -723,12 +723,12 @@ footer p {
 }
 
   .hero h1 {
-    font-size: 1.7rem;
+    font-size: 0.50rem;
     line-height: 1.25;
   }
 
   .hero h2 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .hero p {
@@ -974,3 +974,5 @@ footer p {
     background-color: #21A552;
     transform: translateY(-2px);
 }
+
+
