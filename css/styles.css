@@ -1,686 +1,940 @@
 /* ============================================================
-   ESTILOS GENERALES — Sandro Romero · Técnico en Informática
-   Paleta: Blanco (#FFFFFF), Negro (#1A1A1A), Verde (#21A552)
-   ============================================================ */
+  ESTILOS GENERALES — Sandro Romero · Técnico en Informática
+ ============================================================
+  PALETA DE COLORES:
+  Fondo principal: #F5F0E8 (beige cálido)
+  Fondo secundario: #EEEBE3 (beige oscuro, para secciones alternas)
+  Texto principal: #1A1A1A (negro suave)
+  Texto secundario: #555555 (gris oscuro)
+  Azul principal:  #1B4B82 (azul oscuro, títulos y botones)
+  Azul claro:    #2E6DB4 (azul medio, hover y acentos)
+  Línea/borde:   #D6CFC3 (beige grisáceo)
+ ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap');
+/* --- IMPORTAR TIPOGRAFÍA ROBOTO DESDE GOOGLE FONTS --- */
+/* Podés cambiar la fuente aquí si querés otra tipografía en el futuro */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+/* --- RESET BÁSICO: elimina márgenes y paddings por defecto del navegador --- */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
 
+/* --- ESTILOS BASE DEL BODY --- */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #F5F0E8;
-  color: #1A1A1A;
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+ font-family: 'Roboto', sans-serif; /* Fuente principal */
+ background-color: #F5F0E8;  /* Fondo beige principal */
+ color: #1A1A1A; /* Color de texto general */
+ font-size: 16px;
+ line-height: 1.7;
+ -webkit-font-smoothing: antialiased;
 }
 
+/* --- ENLACES --- */
 a {
-  color: inherit;
-  text-decoration: none;
+ color: inherit;
+ text-decoration: none;
 }
 
+/* --- IMÁGENES RESPONSIVAS --- */
 img {
-  max-width: 100%;
-  display: block;
+ max-width: 100%;
+ display: block;
 }
 
+/* --- CONTENEDOR CENTRADO (envuelve el contenido principal) --- */
+/* Cambiá el max-width si querés que el contenido sea más ancho o más angosto */
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+ max-width: 1100px;
+ margin: 0 auto;
+ padding: 0 20px;
 }
+
 
 /* ============================================================
-   HEADER Y NAVEGACIÓN
-   ============================================================ */
+  HEADER Y NAVEGACIÓN
+ ============================================================ */
 
+/* --- BARRA DE NAVEGACIÓN FIJA ARRIBA --- */
+/* position: sticky hace que quede pegada al scroll */
 header {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #a0c2a4;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 16px 0;
+ background-color: #f0f0f0; /* Mismo color que el fondo */
+ border-bottom: 1px solid #a0c2a4; /* Línea separadora inferior */
+ position: sticky;
+ top: 0;
+ z-index: 100; /* Se mantiene encima de todo el contenido */
+ padding: 16px 0;
 }
 
+/* --- CONTENIDO DEL HEADER: logo + menú --- */
 .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+ max-width: 1100px;
+ margin: 0 auto;
+ padding: 0 20px;
 }
 
+/* --- LOGO / NOMBRE --- */
+/* Cambiá el tamaño de la fuente aquí si querés más o menos grande */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: #21A552;
-  letter-spacing: 0.5px;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 700;
+ font-size: 1.3rem;
+ color: #21A552; /* Azul principal */
+ letter-spacing: 0.5px;
+}
+.logo {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ text-decoration: none;
 }
 
 .logo img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
+ width: 38px;
+ height: 38px;
+ border-radius: 50%;
+ object-fit: cover;
 }
 
 .logo span {
-  font-weight: 600;
+ font-weight: 600;
 }
 
+/* --- MENÚ DE NAVEGACIÓN --- */
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 32px;
+ list-style: none;
+ display: flex;
+ gap: 32px; /* Espacio entre botones del menú. Aumentá o bajá este valor */
 }
 
 nav ul li a {
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: #000000;
-  transition: color 0.2s;
-  letter-spacing: 0.3px;
+ font-size: 0.92rem;
+ font-weight: 500;
+ color: #000000;
+ transition: color 0.2s; /* Animación suave al hacer hover */
+ letter-spacing: 0.3px;
 }
 
-nav ul li a:hover,
+/* --- HOVER DEL MENÚ --- */
+nav ul li a:hover {
+ color: #21A552; /* Se pone blanco al pasar el mouse */
+}
+
+/* --- LINK ACTIVO (la página actual se muestra en azul) --- */
 nav ul li a.active {
-  color: #21A552;
+ color:#21A552 ;
+ border-bottom: none;
+ padding-bottom: 2px;
 }
 
+/* --- BOTÓN HAMBURGUESA (solo visible en móvil) --- */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
+ display: none; /* Oculto en escritorio */
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 4px;
 }
 
 .hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #000000;
-  border-radius: 2px;
-  transition: 0.3s;
+ display: block;
+ width: 24px;
+ height: 2px;
+ background: #000000;
+ border-radius: 2px;
+ transition: 0.3s;
 }
+
 
 /* ============================================================
-   SECCIÓN HERO (CORREGIDA Y CON BUEN CONTRASTE)
-   ============================================================ */
+  SECCIÓN HERO (la primera sección que se ve al entrar)
+ ============================================================ */
 
 .hero {
-  min-height: 520px;
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+ min-height: 500px;
+ padding: 70px 20px;
+
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+
+ text-align: center;
+ color: #1a1a1a;
+
+ position: relative;
+ overflow: hidden;
 }
 
+/* Imagen del hero */
 .hero-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
 }
 
 .hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ object-position: center;
 }
 
-/* Filtro oscuro para que el texto siempre sea legible */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-}
-
+/* Contenido por encima de la imagen */
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
+ position: relative;
+ z-index: 2;
 }
 
-/* Título principal: SERVICIO TÉCNICO */
+/* --- TÍTULO PRINCIPAL --- */
+/* Cambiá font-size para ajustar el tamaño del título principal */
 .hero h1 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #21A552; /* Verde destacado */
-  letter-spacing: 1px;
-  margin-bottom: 2px;
-  line-height: 1.2;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 500;
+ font-size: 1.5rem;  /* En móvil se ve bien a este tamaño */
+ color: #ffffff; /* Azul principal */
+ max-width: 700px;
+ margin: 0 auto 1px;
+ line-height: 1.3;
+ letter-spacing: -0.3px;
 }
 
-/* Subtítulo: NOTEBOOK Y PC (GRANDE) */
+/* --- SUBTÍTULO --- */
+/* Un poco más chico que el título principal */
+.hero h2 {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 700; /* Más liviano para diferenciarse del título */
+ font-size: 3.15rem;
+ color: #ffffff; /* Gris oscuro */
+ max-width: 500px;
+ margin: 0 auto;
+}
+
+/* --- PÁRRAFO DE PRESENTACIÓN DEBAJO DEL SUBTÍTULO --- */
+/* Usado en el hero: reparación, mantenimiento y optimización... */
 .hero p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 800;
-  font-size: 3rem;  /* Grande en PC */
-  color: #ffffff;
-  letter-spacing: 1.5px;
-  margin-bottom: 24px;
-  line-height: 1.15;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 400;
+ font-size: 1rem;
+ color: #fbfffb;
 }
 
-/* Botón WhatsApp dentro del Hero */
-.hero .btn-whatsapp {
-  margin-top: 15px;
-}
+
+
 
 /* ============================================================
-   SECCIÓN SERVICIOS LIMPIA (Tarjetas Blancas)
-   ============================================================ */
-
-.services-clean {
-  padding: 64px 20px;
-  background-color: #f7faf7;
-  text-align: center;
-}
-
-.services-clean-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1A1A1A;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-}
-
-.services-clean-divider {
-  width: 50px;
-  height: 3px;
-  background-color: #21A552;
-  margin: 0 auto 40px;
-  border-radius: 2px;
-}
-
-.services-clean-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.service-clean-card {
-  background-color: #ffffff;
-  border: 1px solid #e1e8e1;
-  border-radius: 12px;
-  padding: 36px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.service-clean-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(33, 165, 82, 0.12);
-  border-color: #21A552;
-}
-
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-}
-
-.service-clean-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1A1A1A;
-  margin-bottom: 12px;
-}
-
-.service-clean-card p {
-  font-size: 0.95rem;
-  color: #555555;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.service-tag {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #21A552;
-  background-color: rgba(33, 165, 82, 0.08);
-  padding: 6px 14px;
-  border-radius: 20px;
-  letter-spacing: 0.3px;
-}
-
-/* ============================================================
-   CARRUSEL DE FOTOS
-   ============================================================ */
+  CARRUSEL DE FOTOS
+ ============================================================ */
 
 .carousel-section {
-  padding: 48px 20px;
-  background-color: #eef3ed;
+ padding: 48px 20px;
+ background-color: #eef3ed; /* Fondo ligeramente diferente para diferenciar la sección */
 }
 
+/* --- CONTENEDOR DEL CARRUSEL --- */
 .carousel-wrapper {
-  position: relative;
-  max-width: 860px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid #f7faf5;
+ position: relative;
+ max-width: 860px;
+ margin: 0 auto;
+ overflow: hidden;     /* Oculta las imágenes que están fuera del área visible */
+ border-radius: 8px;
+ border: 1px solid #f7faf5;
 }
 
+/* --- PISTA (track): todas las imágenes en fila horizontal --- */
 .carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
+ display: flex;
+ transition: transform 0.6s ease-in-out; /* Duración de la animación de deslizamiento */
 }
 
+/* --- CADA SLIDE DEL CARRUSEL --- */
 .carousel-slide {
-  min-width: 100%;
-  height: 420px;
-  position: relative;
-  background-color: #D6CFC3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ min-width: 100%; /* Cada slide ocupa el 100% del ancho del carrusel */
+ height: 420px;  /* Cambiá este valor para hacer el carrusel más alto o más bajo */
+ position: relative;
+ background-color: #D6CFC3; /* Color de fondo cuando no hay imagen cargada */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ gap: 12px;
 }
 
+/* --- IMAGEN DENTRO DEL SLIDE --- */
+/* Cuando agregues tus propias fotos, reemplazá el src en el HTML */
 .carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0; left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover; /* La imagen cubre el área sin deformarse */
+ position: absolute;
+ top: 0; left: 0;
 }
 
+/* --- PLACEHOLDER (texto que aparece mientras no hay foto) --- */
+.slide-placeholder {
+ font-size: 3rem;
+ color: #999;
+}
+
+.slide-placeholder-text {
+ font-size: 0.85rem;
+ color: #888;
+ font-weight: 400;
+}
+
+
+
+/* --- PUNTOS INDICADORES DEL CARRUSEL --- */
 .carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
+ display: flex;
+ justify-content: center;
+ gap: 8px;
+ margin-top: 14px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #D6CFC3;
-  cursor: pointer;
-  transition: background 0.2s;
-  border: none;
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: #D6CFC3;
+ cursor: pointer;
+ transition: background 0.2s;
+ border: none;
 }
 
 .dot.active {
-  background: #21A552;
+ background: #21A552; /* Punto activo en azul */
 }
 
+
 /* ============================================================
-   SECCIÓN ESTADÍSTICAS
-   ============================================================ */
+  SECCIÓN "SOBRE MÍ"
+ ============================================================ */
+
+.about-section {
+ padding: 64px 20px;
+ background-color: #F5F0E8;
+ text-align: center;
+}
+
+/* --- PÁRRAFOS DE PRESENTACIÓN --- */
+/* Ancho limitado para que se lea cómodo, igual criterio que .hero h2 */
+.about-section p {
+ max-width: 680px;
+ margin: 0 auto;
+ font-size: 1rem;
+ color: #333333;
+ line-height: 1.8;
+}
+
+.about-section p + p {
+ margin-top: 16px; /* Separación entre párrafos */
+}
+
+
+/* ============================================================
+  SECCIÓN ESTADÍSTICAS / ÍCONOS
+ ============================================================ */
 
 .stats-section {
-  padding: 52px 20px;
-  background-color: #e8f5ee;
+ padding: 52px 20px;
+ background-color: #e8f5ee;
 }
 
+/* --- GRILLA DE 3 COLUMNAS --- */
+/* En móvil cambia a 1 columna gracias a las media queries al final */
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 32px;
+ max-width: 860px;
+ margin: 0 auto;
+ text-align: center;
 }
 
+/* --- NÚMERO GRANDE --- */
 .stat-number {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #21A552;
-  display: block;
-  margin-bottom: 6px;
+ font-size: 2.2rem;
+ font-weight: 700;
+ color: #21A552; /* Azul para el número */
+ display: block;
+ margin-bottom: 6px;
 }
 
+/* --- TEXTO DEBAJO DEL NÚMERO --- */
 .stat-label {
-  font-size: 0.9rem;
-  color: #555555;
-  font-weight: 400;
+ font-size: 0.9rem;
+ color: #555555;
+ font-weight: 400;
 }
 
+/* --- ÍCONO ENCIMA DEL NÚMERO --- */
 .stat-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  display: block;
+ font-size: 2rem;
+ margin-bottom: 10px;
+ display: block;
 }
+
 
 /* ============================================================
-   BOTÓN WHATSAPP
-   ============================================================ */
+  SECCIÓN FORMACIÓN
+ ============================================================ */
+
+.formacion-section {
+ padding: 64px 20px;
+ background-color: #F5F0E8;
+}
+
+/* --- GRILLA DE TARJETAS DE FORMACIÓN --- */
+/* auto-fit + minmax: se acomoda solo según el ancho de pantalla */
+.formacion-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+ gap: 20px;
+ max-width: 900px;
+ margin: 0 auto;
+}
+
+/* --- CADA TARJETA DE FORMACIÓN --- */
+/* Mismo lenguaje visual que .blog-card: fondo beige oscuro + borde */
+.formacion-item {
+ background: #EEEBE3;
+ border: 1px solid #D6CFC3;
+ border-radius: 8px;
+ padding: 22px;
+ transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.formacion-item:hover {
+ box-shadow: 0 4px 20px rgba(27, 75, 130, 0.1);
+ transform: translateY(-3px);
+}
+
+.formacion-item h3 {
+ font-size: 1rem;
+ font-weight: 700;
+ color: #012706;
+ margin-bottom: 6px;
+ line-height: 1.4;
+}
+
+.formacion-item p {
+ font-size: 0.875rem;
+ color: #555555;
+}
+
+
+/* ============================================================
+  SECCIÓN SERVICIOS / ÁREAS DE TRABAJO
+ ============================================================ */
+
+.services-section {
+ padding: 64px 20px;
+ background-color: #EEEBE3; /* Alternamos el fondo */
+}
+
+/* --- TÍTULO DE SECCIÓN REUTILIZABLE --- */
+/* Esta clase se puede usar en cualquier sección */
+.section-title {
+ font-size: 1.6rem;
+ font-weight: 700;
+ color:#21A552 ;
+ text-align: center;
+ margin-bottom: 12px;
+}
+
+/* --- SUBTÍTULO DE SECCIÓN --- */
+.section-subtitle {
+ text-align: center;
+ color: #555555;
+ font-size: 0.95rem;
+ margin-bottom: 40px;
+}
+
+/* --- LÍNEA DECORATIVA BAJO EL TÍTULO --- */
+.section-divider {
+ width: 48px;
+ height: 3px;
+ background: #21A552;
+ margin: 0 auto 40px;
+ border-radius: 2px;
+}
+
+/* --- LISTA DE SERVICIOS / ÁREAS DE TRABAJO (vista simple en index.html) --- */
+/* Reemplaza la grilla de tarjetas por una lista limpia centrada */
+.services-list {
+ list-style: none;      /* Sin viñetas por defecto */
+ max-width: 560px;      /* Un poco más ancha para que entren las descripciones cortas */
+ margin: 0 auto;       /* Centrada en la página */
+ padding: 0;
+}
+
+.services-list li {
+ padding: 11px 0;            /* Espacio arriba y abajo de cada ítem */
+ border-bottom: 1px solid #D6CFC3;    /* Línea separadora entre ítems */
+ font-size: 0.97rem;
+ color: #1A1A1A;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+}
+
+/* Tilde azul antes de cada ítem */
+.services-list li::before {
+ content: '✔';
+ color:#21A552 ;
+ font-size: 0.78rem;
+ flex-shrink: 0;
+}
+
+.services-list li:last-child {
+ border-bottom: none;    /* El último ítem no tiene línea abajo */
+}
+
+/* --- ENLACE EN EL TÍTULO DE SERVICIOS --- */
+/* El título "Áreas de trabajo" se vuelve clickeable */
+.section-title a {
+ color: #1B4B82;       /* Mismo azul que el título normal */
+ text-decoration: none;
+ transition: opacity 0.2s;
+}
+
+.section-title a:hover {
+ opacity: 0.75;       /* Se aclara un poco al pasar el mouse */
+}
+
+
+
+
+/* ============================================================
+  BOTÓN WHATSAPP
+ ============================================================ */
 
 .whatsapp-section {
-  padding: 52px 20px;
-  text-align: center;
-  background-color: #F5F0E8;
+ padding: 52px 20px;
+ text-align: center;
+ background-color: #F5F0E8;
 }
 
 .whatsapp-section p {
-  font-size: 0.95rem;
-  color: #555555;
-  margin-bottom: 20px;
+ font-size: 0.95rem;
+ color: #555555;
+ margin-bottom: 20px;
 }
 
+/* --- BOTÓN PRINCIPAL (Verde WhatsApp) --- */
+/* Cambiá el color de fondo si querés otro color para el botón */
 .btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #21A552;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 32px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  letter-spacing: 0.3px;
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ background-color: #21A552; /* Verde WhatsApp oficial */
+ color: #fff;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 700;
+ font-size: 0.95rem;
+ padding: 12px 28px;     /* Un poco más chico: menos protagonismo, sigue siendo claro */
+ border-radius: 50px;    /* Bordes completamente redondeados */
+ border: none;
+ cursor: pointer;
+ text-decoration: none;
+ transition: background 0.2s, transform 0.2s;
+ letter-spacing: 0.3px;
 }
 
 .btn-whatsapp:hover {
-  background-color: #1b8a43;
-  transform: translateY(-2px);
+ background-color: #21A552;
+ transform: translateY(-2px);
 }
 
+/* --- ÍCONO WHATSAPP DENTRO DEL BOTÓN --- */
 .btn-whatsapp svg {
-  width: 22px;
-  height: 22px;
-  fill: #fff;
+ width: 20px;
+ height: 20px;
+ fill: #fff;
 }
+
 
 /* ============================================================
-   FOOTER
-   ============================================================ */
+  SECCIÓN BLOG / CONOCIMIENTOS
+ ============================================================ */
+
+.blog-section {
+ padding: 64px 20px;
+ background-color: #EEEBE3;
+}
+
+/* --- GRILLA DEL BLOG --- */
+/* Cada artículo es una tarjeta */
+.blog-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 28px;
+ max-width: 1060px;
+ margin: 0 auto;
+}
+
+/* --- TARJETA DE ARTÍCULO --- */
+.blog-card {
+ background: #F5F0E8;
+ border: 1px solid #D6CFC3;
+ border-radius: 8px;
+ overflow: hidden;
+ transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.blog-card:hover {
+ box-shadow: 0 4px 20px rgba(27, 75, 130, 0.1);
+ transform: translateY(-3px);
+}
+
+/* --- IMAGEN O ÍCONO DEL ARTÍCULO --- */
+/* Cambiá la altura si querés imágenes más grandes */
+.blog-img {
+ width: 100%;
+ height: 180px;
+ background: #D6CFC3;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 3.5rem;  /* Tamaño del emoji ícono */
+ position: relative;
+ overflow: hidden;
+}
+
+/* Cuando agregues tus propias fotos, el img va dentro de .blog-img */
+.blog-img img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ position: absolute;
+ top: 0; left: 0;
+}
+
+/* --- CONTENIDO DE LA TARJETA --- */
+.blog-body {
+ padding: 20px;
+}
+
+/* --- ETIQUETA/CATEGORÍA --- */
+.blog-tag {
+ display: inline-block;
+ font-size: 0.72rem;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ color: #21A552;
+ background: rgba(27, 75, 130, 0.08);
+ padding: 3px 10px;
+ border-radius: 20px;
+ margin-bottom: 10px;
+}
+
+/* --- TÍTULO DEL ARTÍCULO --- */
+.blog-card h3 {
+ font-size: 1rem;
+ font-weight: 700;
+ color: #1A1A1A;
+ margin-bottom: 8px;
+ line-height: 1.4;
+}
+
+/* --- TEXTO DEL ARTÍCULO --- */
+.blog-card p {
+ font-size: 0.875rem;
+ color: #555555;
+ line-height: 1.7;
+}
+
+
+/* ============================================================
+  FOOTER (PIE DE PÁGINA)
+ ============================================================ */
 
 footer {
-  background-color: #1A1A1A; /* Negro elegante en vez de saturar con verde */
-  color: #fff;
-  text-align: center;
-  padding: 24px 20px;
+ background-color: #21A552; /* verde oscuro para el footer */
+ color: #fff;
+ text-align: center;
+ padding: 24px 20px;
 }
 
 footer p {
-  font-size: 0.85rem;
-  opacity: 0.8;
+ font-size: 0.85rem;
+ font-weight: 300;
+ opacity: 0.9;
 }
+
 
 /* ============================================================
-   RESPONSIVE (MÓVILES Y TABLETS)
-   ============================================================ */
+  RESPONSIVE — ADAPTACIÓN A DISPOSITIVOS MÓVILES
+ ============================================================
+  Breakpoints:
+ - max-width: 768px → tablets y celulares grandes
+ - max-width: 480px → celulares chicos
+ ============================================================ */
 
 @media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #F5F0E8;
-    border-bottom: 1px solid #D6CFC3;
-    padding: 12px 0;
-    z-index: 99;
-  }
 
-  nav ul.open {
-    display: flex;
-  }
+ /* --- MENÚ: ocultar links, mostrar hamburguesa --- */
+ nav ul {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: #F5F0E8;
+  border-bottom: 1px solid #D6CFC3;
+  padding: 12px 0;
+  z-index: 99;
+ }
 
-  nav ul li a {
-    display: block;
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
+ nav ul.open {
+  display: flex; /* Se muestra cuando el hamburger está activo */
+ }
 
-  .hamburger {
-    display: flex;
-  }
+ nav ul li a {
+  display: block;
+  padding: 12px 24px;
+  font-size: 1rem;
+ }
 
-  /* --- HERO EN CELULAR --- */
-  .hero {
-    min-height: 420px;
-    padding: 60px 20px;
-  }
-
-  .hero h1 {
-    font-size: 1.4rem;  /* Tamaño legible y proporcionado */
-    margin-bottom: 4px;
-  }
-
-  .hero p {
-    font-size: 2.1rem;  /* NOTEBOOK Y PC bien grande en celulares */
-    max-width: 100%;
-    margin-bottom: 18px;
-  }
-
-  .carousel-slide {
-    height: 240px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-<<<<<<< HEAD
-  .services-clean-grid {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-  }
-}
-=======
-  /* --- PASOS EN UNA COLUMNA --- */
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* --- FORMACIÓN / PROYECTOS / ACTUALMENTE: ya se adaptan solos con auto-fit --- */
-
-  /* --- SERVICIOS: ya se adaptan solos con auto-fill --- */
-
-  /* --- BLOG: 1 columna en móvil --- */
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ajustes extra para celulares muy chicos */
-  .hero {
-  min-height: 390px;
-  padding: 50px 16px 40px;
+ .hamburger {
+  display: flex; /* Mostrar hamburguesa en móvil */
+ }
+ /* --- HERO / BANNER ADAPTADO A MÓVIL --- */
+.hero {
+ min-height: 420px;
+ padding: 60px 20px;
 }
 
 .hero-image img {
-  object-position: center center;
+ object-position: center center;
 }
 
-  .hero h1 {
-    font-size: 1.45rem;
-  }
+ .hero h1 {
+  font-size: 0.50rem;
+  line-height: 1.25;
+  margin-bottom: 4px;
+ }
 
-  .stat-number {
-    font-size: 1.8rem;
-  }
+ .hero h2 {
+  font-size: 2rem;
+ }
+
+ .hero p {
+  font-size: 0.95rem;
+  max-width: 340px;
+ }
+
+ .location-tag {
+  font-size: 0.8rem;
+ }
+
+ /* --- CARRUSEL MÁS BAJO EN MÓVIL --- */
+ .carousel-slide {
+  height: 260px;
+ }
+
+ /* --- ESTADÍSTICAS EN UNA COLUMNA --- */
+ .stats-grid {
+  grid-template-columns: 1fr;
+  gap: 24px;
+ }
+
+ /* --- PASOS EN UNA COLUMNA --- */
+ .steps-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+ }
+
+ /* --- FORMACIÓN / PROYECTOS / ACTUALMENTE: ya se adaptan solos con auto-fit --- */
+
+ /* --- SERVICIOS: ya se adaptan solos con auto-fill --- */
+
+ /* --- BLOG: 1 columna en móvil --- */
+ .blog-grid {
+  grid-template-columns: 1fr;
+ }
+}
+
+@media (max-width: 480px) {
+ /* Ajustes extra para celulares muy chicos */
+ .hero {
+ min-height: 390px;
+ padding: 50px 16px 40px;
+}
+
+.hero-image img {
+ object-position: center center;
+}
+
+ .hero h1 {
+  font-size: 1.45rem;
+ }
+
+ .stat-number {
+  font-size: 1.8rem;
+ }
 }
 
 
 /* ============================================================
-   SOBRE MÍ — DISEÑO RESPONSIVE
-   ============================================================ */
+  SOBRE MÍ — DISEÑO RESPONSIVE
+ ============================================================ */
 
 .sobre-mi-contenido {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  max-width: 1000px;
-  margin: 0 auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 60px;
+ max-width: 1000px;
+ margin: 0 auto;
 }
 
 .sobre-mi-texto {
-  flex: 1;
-  min-width: 0;
+ flex: 1;
+ min-width: 0;
 }
 
 .sobre-mi-foto {
-  flex: 0 0 230px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ flex: 0 0 230px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .sobre-mi-foto img {
-  display: block !important;
-  width: 230px !important;
-  height: 230px !important;
-  max-width: none !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  border: 4px solid #036b29 !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+ display: block !important;
+ width: 230px !important;
+ height: 230px !important;
+ max-width: none !important;
+ border-radius: 50% !important;
+ object-fit: cover !important;
+ border: 4px solid #036b29 !important;
+ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 
 /* ============================================================
-   SOBRE MÍ — CELULARES
-   ============================================================ */
+  SOBRE MÍ — CELULARES
+ ============================================================ */
 
 @media (max-width: 700px) {
 
-  .sobre-mi-contenido {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
+ .sobre-mi-contenido {
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+ }
 
-  .sobre-mi-foto {
-    order: 1;
-    flex: none;
-    width: 100%;
-  }
+ .sobre-mi-foto {
+  order: 1;
+  flex: none;
+  width: 100%;
+ }
 
-  .sobre-mi-texto {
-    order: 2;
-    width: 100%;
-  }
+ .sobre-mi-texto {
+  order: 2;
+  width: 100%;
+ }
 
-  .sobre-mi-foto img {
-    width: 190px !important;
-    height: 190px !important;
-    max-width: none !important;
-    border-radius: 50% !important;
-    border: 4px solid #03491d !important;
-  }
+ .sobre-mi-foto img {
+  width: 190px !important;
+  height: 190px !important;
+  max-width: none !important;
+  border-radius: 50% !important;
+  border: 4px solid #03491d !important;
+ }
 
-  .sobre-mi-texto .services-list {
-    text-align: left;
-  }
+ .sobre-mi-texto .services-list {
+  text-align: left;
+ }
 }
 
 /* ============================================================
-   BANNERS GRANDES DE SERVICIOS
-   ============================================================ */
+  BANNERS GRANDES DE SERVICIOS
+ ============================================================ */
 
 .service-banner {
-  width: 100%;
-  min-height: 100vh;
+ width: 100%;
+ min-height: 100vh;
 
-  position: relative;
+ position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
 
-  color: white;
-  text-align: center;
+ color: white;
+ text-align: center;
 }
 
 
 /* --- IMAGEN WINDOWS 11 --- */
 
 .windows-banner {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35)
-    ),
-    url("../img/windows-11-banner.jpg");
+ background-image:
+  linear-gradient(
+   rgba(0, 0, 0, 0.35),
+   rgba(0, 0, 0, 0.35)
+  ),
+  url("../img/windows-11-banner.jpg");
 }
 
 .remote-banner {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35)
-    ),
-    url("../img/soporte-remoto.jpg");
+ background-image:
+  linear-gradient(
+   rgba(0, 0, 0, 0.35),
+   rgba(0, 0, 0, 0.35)
+  ),
+  url("../img/soporte-remoto.jpg");
 }
 
 
 .hardware-banner {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35)
-    ),
-    url("../img/hardware.jpg");
+ background-image:
+  linear-gradient(
+   rgba(0, 0, 0, 0.35),
+   rgba(0, 0, 0, 0.35)
+  ),
+  url("../img/hardware.jpg");
 }
 
 
 /* --- TEXTO SOBRE LA IMAGEN --- */
 
 .service-banner-content {
-  position: relative;
-  z-index: 2;
+ position: relative;
+ z-index: 2;
 
-  padding: 20px;
+ padding: 20px;
 }
 
 .service-banner h2 {
-  font-size: 1.7rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-  letter-spacing: -1px;
+ font-size: 1.7rem;
+ font-weight: 500;
+ margin-bottom: 10px;
+ letter-spacing: -1px;
 }
 
 .service-banner p {
-  font-size: 1.3rem;
-  font-weight: 400;
+ font-size: 1.3rem;
+ font-weight: 400;
 }
 
 
@@ -688,39 +942,145 @@ footer p {
 
 @media (max-width: 768px) {
 
-  .service-banner {
-    min-height: 70vh;
-  }
+ .service-banner {
+  min-height: 70vh;
+ }
 
-  .service-banner h2 {
-    font-size: 2.0rem;
-  }
+ .service-banner h2 {
+  font-size: 2.0rem;
+ }
 
-  .service-banner p {
-    font-size: 1rem;
-  }
+ .service-banner p {
+  font-size: 1rem;
+ }
 
 }
 
 
 
 .btn-whatsapp {
-    display: inline-block;
-    margin-top: 55px;
-    padding: 13px 25px;
-    background-color: #21A552;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 6px;
-    transition: 0.3s ease;
+  display: inline-block;
+  margin-top: 55px;
+  padding: 13px 25px;
+  background-color: #21A552;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: 0.3s ease;
 }
 
 .btn-whatsapp:hover {
-    background-color: #21A552;
-    transform: translateY(-2px);
+  background-color: #21A552;
+  transform: translateY(-2px);
 }
 
 
->>>>>>> parent of eff8c29 (ki)
+/* ============================================================
+  SECCIÓN SERVICIOS LIMPIA (Verde, Blanco y Negro)
+ ============================================================ */
+
+.services-clean {
+ padding: 64px 20px;
+ background-color: #f7faf7; /* Fondo blanco humo sutil */
+ text-align: center;
+}
+
+.services-clean-title {
+ font-family: 'Roboto', sans-serif;
+ font-size: 2rem;
+ font-weight: 700;
+ color: #1A1A1A; /* Negro */
+ letter-spacing: 0.5px;
+ margin-bottom: 8px;
+}
+
+.services-clean-divider {
+ width: 50px;
+ height: 3px;
+ background-color: #21A552; /* Verde corporativo */
+ margin: 0 auto 40px;
+ border-radius: 2px;
+}
+
+/* Grilla de 3 columnas en PC */
+.services-clean-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+ max-width: 1100px;
+ margin: 0 auto;
+}
+
+/* Cada tarjeta individual */
+.service-clean-card {
+ background-color: #ffffff; /* Blanco puro */
+ border: 1px solid #e1e8e1;
+ border-radius: 12px;
+ padding: 36px 24px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Efecto hover sobrio en PC */
+.service-clean-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 10px 24px rgba(33, 165, 82, 0.1);
+ border-color: #21A552;
+}
+
+/* Ícono */
+.service-icon {
+ font-size: 2.5rem;
+ margin-bottom: 16px;
+}
+
+/* Título de la tarjeta */
+.service-clean-card h3 {
+ font-family: 'Roboto', sans-serif;
+ font-size: 1.3rem;
+ font-weight: 700;
+ color: #1A1A1A;
+ margin-bottom: 12px;
+}
+
+/* Descripción */
+.service-clean-card p {
+ font-size: 0.95rem;
+ color: #555555;
+ line-height: 1.6;
+ margin-bottom: 20px;
+ flex-grow: 1; /* Alinea los tags al fondo parejos */
+}
+
+/* Etiqueta inferior de detalle */
+.service-tag {
+ font-size: 0.78rem;
+ font-weight: 700;
+ color: #21A552;
+ background-color: rgba(33, 165, 82, 0.08);
+ padding: 6px 14px;
+ border-radius: 20px;
+ letter-spacing: 0.3px;
+}
+
+/* Adaptación a tablets y celulares */
+@media (max-width: 850px) {
+ .services-clean-grid {
+  grid-template-columns: 1fr; /* Una columna en vertical */
+  gap: 20px;
+  max-width: 500px;
+ }
+ 
+ .services-clean {
+  padding: 48px 16px;
+ }
+
+ .service-clean-card {
+  padding: 28px 20px;
+ }
+}
