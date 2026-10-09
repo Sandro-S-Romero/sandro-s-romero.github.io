@@ -198,9 +198,9 @@ nav ul li a.active {
 /* --- TÍTULO PRINCIPAL --- */
 /* Cambiá font-size para ajustar el tamaño del título principal */
 .hero h1 {
- font-family: 'Roboto', sans-serif;
+ font-family: 'Manrope', sans-serif;
  font-weight: 500;
- font-size: 1.5rem;  /* En móvil se ve bien a este tamaño */
+ font-size: 2.5rem;  /* En móvil se ve bien a este tamaño */
  color: #ffffff; /* Azul principal */
  max-width: 700px;
  margin: 0 auto 1px;
@@ -211,10 +211,10 @@ nav ul li a.active {
 /* --- SUBTÍTULO --- */
 /* Un poco más chico que el título principal */
 .hero h2 {
- font-family: 'Roboto', sans-serif;
+ font-family: 'Inter', sans-serif;
  font-weight: 700; /* Más liviano para diferenciarse del título */
- font-size: 3.15rem;
- color: #ffffff; /* Gris oscuro */
+ font-size: 1.15rem;
+ color: #ebe7e7; /* Gris oscuro */
  max-width: 500px;
  margin: 0 auto;
 }
@@ -729,7 +729,7 @@ footer p {
  }
 
  .hero h2 {
-  font-size: 2rem;
+  font-size: 1rem;
  }
 
  .hero p {
